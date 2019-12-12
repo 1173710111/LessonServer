@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.neuedu.demo.dao.BanjiMapper">
+	<insert id="insertBanji" parameterType="Banji">
+		INSERT INTO
+		class_table(class_name) VALUES(#{className});
+	</insert>
+	<delete id="deleteBanji" parameterType="Integer">
+		DELETE FROM class_table
+		WHERE class_id=#{id};
+	</delete>
+	<update id="updateBanji" parameterType="Banji">
+		UPDATE class_table
+		SET
+		class_name=#{className}
+		WHERE class_id=#{classId};
+	</update>
+	<!-- <select id="queryBanji" resultType="Banji">
+		SELECT class_id	classID,class_name className
+		FROM class_table;
+	</select>
+	<select id="queryBanjiById" resultMap="myBanji">
+		SELECT class_id,class_name
+		FROM class_table
+		WHERE class_id= #{0}
+	</select> -->
+	
+	<sql id="aaa">
+		SELECT class_id	classID,class_name className
+		FROM class_table
+	</sql>
+	<select id="queryBanjiByAny" resultType="Banji" parameterType="Banji">
+		<include refid="aaa"></include>
+		<where>
+			<if test="classId!=null and classId!=0">
+				and class_id= #{classId}
+			</if>
+			<if test="className!=null and className!='' ">
+				and class_name = #{className}
+			</if>
+		</where>
+	</select>
+	<!-- <resultMap type="Banji" id="myBanji">
+		<id column="class_id" property="classId" />
+		<result column="class_name" property="className" />
+	</resultMap>
+	 -->
+
+</mapper>

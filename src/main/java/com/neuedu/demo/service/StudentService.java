@@ -13,8 +13,8 @@ public interface StudentService {
 	}
 	
 	public int insertStudent(UserInfo student);
-	public void deleteStudent(Integer id);
+	public void deleteStudent(Long id);
 	public void updateStudent(UserInfo student);
-	public UserInfo queryStudentById(Integer id);
-	public Integer count();
+	public UserInfo queryStudentById(Long id);
+	public Long count();
 }

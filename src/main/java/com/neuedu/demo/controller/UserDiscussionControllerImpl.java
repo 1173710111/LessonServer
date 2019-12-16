@@ -11,31 +11,31 @@ public class UserDiscussionControllerImpl implements UserDiscussionController {
 	}
 
 	@Override
-	public String insertUserDiscussion(Integer discussionId, String userIdentity, Integer userId, int starState) {
+	public String insertUserDiscussion(Long discussionId, String userIdentity, Long userId, int starState) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public String deleteUserDiscussion(String userIdentity, Integer userId, Integer discussionId) {
+	public String deleteUserDiscussion(String userIdentity, Long userId, Long discussionId) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public String updateUserDiscussionState(String userIdentity, Integer userId, Integer discussionId, int starState) {
+	public String updateUserDiscussionState(String userIdentity, Long userId, Long discussionId, int starState) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public List<Integer> queryUserDiscussions(String userIdentity, Integer userId) {
+	public List<Long> queryUserDiscussions(String userIdentity, Long userId) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public List<Integer> queryDiscussionUsersByUserId(Integer discussionId) {
+	public List<Long> queryDiscussionUsersByUserId(Long discussionId) {
 		// TODO Auto-generated method stub
 		return null;
 	}

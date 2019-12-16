@@ -12,9 +12,9 @@ public interface DiscussionController {
 		return controller;
 	}
 	
-	public String insertDiscussion(int lessonId,String title);
-	public String deleteDiscussion(Integer id);
-	public String updateDiscussion(long id,int lessonId,String title);
-	public Discussion queryDiscussionInfoById(Integer id);
-	public List<Discussion> queryDiscussionsByLessonId(Integer id);
+	public String insertDiscussion(Long lessonId,String title);
+	public String deleteDiscussion(Long id);
+	public String updateDiscussion(Long id,Long lessonId,String title);
+	public Discussion queryDiscussionInfoById(Long id);
+	public List<Discussion> queryDiscussionsByLessonId(Long id);
 }

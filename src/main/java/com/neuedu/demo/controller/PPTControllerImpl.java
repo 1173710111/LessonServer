@@ -13,33 +13,34 @@ public class PPTControllerImpl implements PPTController {
 	}
 
 	@Override
-	public String insertPPT(Integer lessonId, Integer sublessonId) {
+	public String insertPPT(Long lessonId, Long sublessonId) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public String deletePPT(Integer id) {
+	public String deletePPT(Long id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public String updatePPT(Integer id, Integer lessonId, Integer sublessonId) {
+	public String updatePPT(Long id, Long lessonId, Long sublessonId) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public PPT queryPPTInfoById(Integer id) {
+	public PPT queryPPTInfoById(Long id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public List<PPT> queryPPTsBySubLessonId(Integer id) {
+	public List<PPT> queryPPTsBySubLessonId(Long id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
+	
 }

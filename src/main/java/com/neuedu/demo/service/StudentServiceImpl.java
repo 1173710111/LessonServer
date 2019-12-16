@@ -33,7 +33,7 @@ public class StudentServiceImpl implements StudentService {
 	}
 
 	@Override
-	public void deleteStudent(Integer id) {
+	public void deleteStudent(Long id) {
 		mapper.deleteStudent(id);
 		session.commit();
 	}
@@ -45,14 +45,18 @@ public class StudentServiceImpl implements StudentService {
 	}
 
 	@Override
-	public UserInfo queryStudentById(Integer id) {
-		UserInfo student=mapper.queryStudentById(id);
-		session.commit();
+	public UserInfo queryStudentById(Long id) {
+		UserInfo student=null;
+		if (mapper.isExistent(id)==0){
+			student=new UserInfo(null,null,0,null,null);
+		}else{
+			student=mapper.queryStudentById(id);
+		}
 		return student;
 	}
 	
 	@Override 
-	public Integer count(){
+	public Long count(){
 		return mapper.count();
 	}
 

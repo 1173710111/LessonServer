@@ -14,31 +14,31 @@ public class DiscussionControllerImpl implements DiscussionController {
 	}
 
 	@Override
-	public String insertDiscussion(int lessonId, String title) {
+	public String insertDiscussion(Long lessonId, String title) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public String deleteDiscussion(Integer id) {
+	public String deleteDiscussion(Long id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public String updateDiscussion(long id, int lessonId, String title) {
+	public String updateDiscussion(Long id, Long lessonId, String title) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Discussion queryDiscussionInfoById(Integer id) {
+	public Discussion queryDiscussionInfoById(Long id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public List<Discussion> queryDiscussionsByLessonId(Integer id) {
+	public List<Discussion> queryDiscussionsByLessonId(Long id) {
 		// TODO Auto-generated method stub
 		return null;
 	}

@@ -36,7 +36,7 @@ public class MessageControllerImpl implements MessageController {
 	}
 
 	@Override
-	public String deleteMessage(Integer id) {
+	public String deleteMessage(Long id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -48,10 +48,11 @@ public class MessageControllerImpl implements MessageController {
 	}
 
 	@Override
-	public Message queryMessageInfoById(Integer id) {
+	public Message queryMessageInfoById(Long id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
+	
 	
 }

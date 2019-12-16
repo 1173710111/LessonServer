@@ -41,17 +41,17 @@ public class StudentControllerTest {
 	}
 	@Test
 	public void deleteTest(){
-		String result=controller.deleteStudent(3);
+		String result=controller.deleteStudent((long) 3);
 		System.out.print(result);
 	}
 	@Test
 	public void queryTest(){
-		String result=controller.queryStudentInfoById(1).toString();
+		String result=controller.queryStudentInfoById((long) 5).toString();
 		System.out.print(result);
 	}
 	@Test
 	public void updateTest(){
-		String result=controller.updateStudent(2,"拉普兰德做得到吗", "654321", image);
+		String result=controller.updateStudent((long) 2,"拉普兰德做得到吗", "654321", image);
 		System.out.print(result);
 	}
 }

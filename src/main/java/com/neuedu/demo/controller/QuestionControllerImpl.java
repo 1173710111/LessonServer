@@ -13,33 +13,34 @@ public class QuestionControllerImpl implements QuestionController {
 	}
 
 	@Override
-	public String insertQuestion(Integer exampaperId, String introduction, String options, String answer) {
+	public String insertQuestion(Long exampaperId, String introduction, String options, String answer) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public String deleteQuestion(Integer id) {
+	public String deleteQuestion(Long id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public String updateQuestion(Integer id, Integer exampaperId, String introduction, String options, String answer) {
+	public String updateQuestion(Long id, Long exampaperId, String introduction, String options, String answer) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Question queryQuestionInfoById(Integer id) {
+	public Question queryQuestionInfoById(Long id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public List<Question> queryQuestionsByExampaperId(Integer id) {
+	public List<Question> queryQuestionsByExampaperId(Long id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
+	
 }

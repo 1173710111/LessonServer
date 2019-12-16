@@ -11,25 +11,25 @@ public class UserMessageControllerImpl implements UserMessageController {
 	}
 
 	@Override
-	public String insertUserMessage(Integer MessageId, String userIdentity, Integer userId) {
+	public String insertUserMessage(Long MessageId, String userIdentity, Long userId) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public String deleteUserMessage(String userIdentity, Integer userId, Integer MessageId) {
+	public String deleteUserMessage(String userIdentity, Long userId, Long MessageId) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public List<Integer> queryUserMessages(String userIdentity, Integer userId) {
+	public List<Long> queryUserMessages(String userIdentity, Long userId) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public List<Integer> queryMessageUsersByUserId(Integer MessageId) {
+	public List<Long> queryMessageUsersByUserId(Long MessageId) {
 		// TODO Auto-generated method stub
 		return null;
 	}

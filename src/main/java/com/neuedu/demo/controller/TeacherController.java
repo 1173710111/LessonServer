@@ -11,7 +11,7 @@ public interface TeacherController {
 	}
 	
 	public String insertTeacher(String username,String password,String image);
-	public String deleteTeacher(Integer id);
-	public String updateTeacher(Integer id,String username,String password,String image);
-	public UserInfo queryTeacherInfoById(Integer id);
+	public String deleteTeacher(Long id);
+	public String updateTeacher(Long id,String username,String password,String image);
+	public UserInfo queryTeacherInfoById(Long id);
 }

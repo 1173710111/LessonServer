@@ -14,7 +14,7 @@ public interface MessageController {
 	public String insertMemberDeleteMessage(String sender,String content,int lessonId);
 	public String insertTeamAddMessage(String sender,String content,int lessonId,long activityId,long workId);
 	public String insertDiscussionMessage(String type,String sender,String content,int lessonId,long discussionId,long replyId);
-	public String deleteMessage(Integer id);
+	public String deleteMessage(Long id);
 	public String updateMessage(Message message);
-	public Message queryMessageInfoById(Integer id);
+	public Message queryMessageInfoById(Long id);
 }

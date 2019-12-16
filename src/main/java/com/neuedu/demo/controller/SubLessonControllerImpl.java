@@ -13,31 +13,31 @@ public class SubLessonControllerImpl implements SubLessonController {
 	}
 
 	@Override
-	public String insertSubLesson(String name, Integer lessonId) {
+	public String insertSubLesson(String name, Long lessonId) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public String deleteSubLesson(Integer id) {
+	public String deleteSubLesson(Long id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public String updateSubLesson(Integer id, String name, int lessonId) {
+	public String updateSubLesson(Long id, String name, int lessonId) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public SubLesson querySubLessonInfoById(Integer id) {
+	public SubLesson querySubLessonInfoById(Long id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public List<SubLesson> querySubLessonsByLessonId(Integer lessonId) {
+	public List<SubLesson> querySubLessonsByLessonId(Long lessonId) {
 		// TODO Auto-generated method stub
 		return null;
 	}

@@ -13,32 +13,31 @@ public class ExampaperControllerImpl implements ExampaperController {
 	}
 
 	@Override
-	public String insertExampaper(String publishedTime, String lastTime, Integer lessonId, Integer sublessonId) {
+	public String insertExampaper(String publishedTime, String lastTime, Long lessonId, Long sublessonId) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public String deleteExampaper(Integer id) {
+	public String deleteExampaper(Long id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public String updateExampaper(long id, String publishedTime, String lastTime, Integer lessonId,
-			Integer sublessonId) {
+	public String updateExampaper(Long id, String publishedTime, String lastTime, Long lessonId, Long sublessonId) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public ExamPaper queryExampaperInfoById(Integer id) {
+	public ExamPaper queryExampaperInfoById(Long id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public List<ExamPaper> queryExampapersBySublessonId(Integer id) {
+	public List<ExamPaper> queryExampapersBySublessonId(Long id) {
 		// TODO Auto-generated method stub
 		return null;
 	}

@@ -10,9 +10,9 @@ public interface LessonMemberController {
 		return controller;
 	}
 	
-	public String insertLessonMember(int lessonId,int MemberId);
-	public String deleteLessonMember(int lessonId,int MemberId);
-	public List<Integer> queryLessonsByMemberId(Integer id);
-	public List<Integer> queryMembersByLessonId(Integer id);
+	public String insertLessonMember(Long lessonId,Long MemberId);
+	public String deleteLessonMember(Long lessonId,Long MemberId);
+	public List<Long> queryLessonsByMemberId(Long id);
+	public List<Long> queryMembersByLessonId(Long id);
 	
 }

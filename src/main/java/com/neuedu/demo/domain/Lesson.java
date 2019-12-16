@@ -9,15 +9,12 @@ public class Lesson {
 	private int id;
 	private LessonInfo mainInfo;
 	private LessonContained contain;
+	
 	public LessonInfo getMainInfo() {
 		return mainInfo;
 	}
 	public LessonContained getContain() {
 		return contain;
 	}
-	public void setId(int id) {
-		this.id = id;
-	}
-	
 	
 }

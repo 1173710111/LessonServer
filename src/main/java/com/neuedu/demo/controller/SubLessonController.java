@@ -13,9 +13,9 @@ public interface SubLessonController {
 		return controller;
 	}
 	
-	public String insertSubLesson(String name,Integer lessonId);
-	public String deleteSubLesson(Integer id);
-	public String updateSubLesson(Integer id,String name,int lessonId);
-	public SubLesson querySubLessonInfoById(Integer id);
-	public List<SubLesson> querySubLessonsByLessonId(Integer lessonId);
+	public String insertSubLesson(String name,Long lessonId);
+	public String deleteSubLesson(Long id);
+	public String updateSubLesson(Long id,String name,int lessonId);
+	public SubLesson querySubLessonInfoById(Long id);
+	public List<SubLesson> querySubLessonsByLessonId(Long lessonId);
 }

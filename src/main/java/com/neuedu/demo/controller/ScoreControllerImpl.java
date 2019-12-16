@@ -11,33 +11,33 @@ public class ScoreControllerImpl implements ScoreController {
 	}
 
 	@Override
-	public String insertScore(Integer numberAll, Integer numberWrong, Integer numberRight, Integer numberUnfinished,
-			Integer exampaperId) {
+	public String insertScore(Long numberAll, Long numberWrong, Long numberRight, Long numberUnfinished,
+			Long exampaperId) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public String deleteScore(Integer id) {
+	public String deleteScore(Long id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public String updateScore(Integer scoreId,Integer numberAll, Integer numberWrong, Integer numberRight, Integer numberUnfinished,
-			Integer exampaperId) {
+	public String updateScore(Long scoreId,Long numberAll, Long numberWrong, Long numberRight, Long numberUnfinished,
+			Long exampaperId) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Score queryScoreInfoById(Integer id) {
+	public Score queryScoreInfoById(Long id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Score queryScoreByExampaperId(Integer id) {
+	public Score queryScoreByExampaperId(Long id) {
 		// TODO Auto-generated method stub
 		return null;
 	}

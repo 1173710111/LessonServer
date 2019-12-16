@@ -5,7 +5,7 @@ import java.util.List;
 import org.apache.ibatis.session.SqlSession;
 
 import com.neuedu.demo.domain.Student;
-import com.neuedu.demo.domain.Work;
+import com.neuedu.demo.domain.StudentWork;
 
 public interface WorkMemberController {
 	public static WorkMemberController empty(SqlSession session){
@@ -13,9 +13,9 @@ public interface WorkMemberController {
 		return controller;
 	}
 	
-	public String insertWork(Integer workId,Integer studentId);
-	public String deleteWork(Integer workId,Integer studentId);
-	public List<Student> queryStudentsByWorkId(Integer workId);
-	public List<Work> queryWorksByStudentId(Integer studentId); 
+	public String insertWork(Long workId,Long studentId);
+	public String deleteWork(Long workId,Long studentId);
+	public List<Student> queryStudentsByWorkId(Long workId);
+	public List<StudentWork> queryWorksByStudentId(Long studentId); 
 
 }

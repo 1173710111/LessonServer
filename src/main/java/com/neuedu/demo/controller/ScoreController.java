@@ -10,9 +10,9 @@ public interface ScoreController {
 		return controller;
 	}
 	
-	public String insertScore(Integer numberAll,Integer numberWrong,Integer numberRight,Integer numberUnfinished,Integer exampaperId);
-	public String deleteScore(Integer id);
-	public String updateScore(Integer scoreId,Integer numberAll,Integer numberWrong,Integer numberRight,Integer numberUnfinished,Integer exampaperId);
-	public Score queryScoreInfoById(Integer id);
-	public Score queryScoreByExampaperId(Integer id);
+	public String insertScore(Long numberAll,Long numberWrong,Long numberRight,Long numberUnfinished,Long exampaperId);
+	public String deleteScore(Long id);
+	public String updateScore(Long scoreId,Long numberAll,Long numberWrong,Long numberRight,Long numberUnfinished,Long exampaperId);
+	public Score queryScoreInfoById(Long id);
+	public Score queryScoreByExampaperId(Long id);
 }

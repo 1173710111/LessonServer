@@ -13,33 +13,33 @@ public class StudentAnswerControllerImpl implements StudentAnswerController {
 	}
 
 	@Override
-	public String insertStudentAnswer(Integer questionId, Integer StudentId, String answer, int finishedState,
+	public String insertStudentAnswer(Long questionId, Long StudentId, String answer, int finishedState,
 			int starState) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public String deleteStudentAnswer(Integer id) {
+	public String deleteStudentAnswer(Long id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public String updateStudentAnswer(Integer id, Integer questionId, Integer StudentId, String answer,
+	public String updateStudentAnswer(Long id, Long questionId, Long StudentId, String answer,
 			int finishedState, int starState) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public StudentAnswer queryStudentAnswerInfoById(Integer id) {
+	public StudentAnswer queryStudentAnswerInfoById(Long id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public List<StudentAnswer> queryStudentAnswersByStudentId(Integer studentID) {
+	public List<StudentAnswer> queryStudentAnswersByStudentId(Long studentID) {
 		// TODO Auto-generated method stub
 		return null;
 	}

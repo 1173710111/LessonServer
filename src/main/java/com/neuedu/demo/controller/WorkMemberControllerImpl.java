@@ -5,7 +5,7 @@ import java.util.List;
 import org.apache.ibatis.session.SqlSession;
 
 import com.neuedu.demo.domain.Student;
-import com.neuedu.demo.domain.Work;
+import com.neuedu.demo.domain.StudentWork;
 
 public class WorkMemberControllerImpl implements WorkMemberController {
 
@@ -14,25 +14,25 @@ public class WorkMemberControllerImpl implements WorkMemberController {
 	}
 
 	@Override
-	public String insertWork(Integer workId, Integer studentId) {
+	public String insertWork(Long workId, Long studentId) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public String deleteWork(Integer workId, Integer studentId) {
+	public String deleteWork(Long workId, Long studentId) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public List<Student> queryStudentsByWorkId(Integer workId) {
+	public List<Student> queryStudentsByWorkId(Long workId) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public List<Work> queryWorksByStudentId(Integer studentId) {
+	public List<StudentWork> queryWorksByStudentId(Long studentId) {
 		// TODO Auto-generated method stub
 		return null;
 	}

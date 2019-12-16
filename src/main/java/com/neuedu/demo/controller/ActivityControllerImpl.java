@@ -14,34 +14,35 @@ public class ActivityControllerImpl implements ActivityController {
 	}
 
 	@Override
-	public String insertActivity(long lessonId, String title, String introduction, String deadline, int teamVolume) {
+	public String insertActivity(Integer lessonId, String title, String introduction, String deadline, int teamVolume) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public String deleteActivity(Integer id) {
+	public String deleteActivity(Long id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public String updateActivity(long lessonId, String title, String introduction, String deadline, int teamVolume) {
+	public String updateActivity(Integer lessonId, String title, String introduction, String deadline, int teamVolume) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Activity queryActivityInfoById(Integer id) {
+	public Activity queryActivityInfoById(Long id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public List<Activity> queryActivitysByLessonId(Integer id) {
+	public List<Activity> queryActivitysByLessonId(Long id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
+	
 	
 }

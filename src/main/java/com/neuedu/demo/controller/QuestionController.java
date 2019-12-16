@@ -12,10 +12,10 @@ public interface QuestionController {
 		return controller;
 	}
 	
-	public String insertQuestion(Integer exampaperId,String introduction,String options,String answer);
-	public String deleteQuestion(Integer id);
-	public String updateQuestion(Integer id,Integer exampaperId,String introduction,String options,String answer);
-	public Question queryQuestionInfoById(Integer id);
-	public List<Question> queryQuestionsByExampaperId(Integer id); 
+	public String insertQuestion(Long exampaperId,String introduction,String options,String answer);
+	public String deleteQuestion(Long id);
+	public String updateQuestion(Long id,Long exampaperId,String introduction,String options,String answer);
+	public Question queryQuestionInfoById(Long id);
+	public List<Question> queryQuestionsByExampaperId(Long id); 
 }
 

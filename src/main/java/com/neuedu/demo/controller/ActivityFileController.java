@@ -11,10 +11,10 @@ public interface ActivityFileController {
 		return controller;
 	}
 	
-	public String insertActivityFile(String fileName,String url,String type,Integer activityId,Integer workId);
-	public String deleteActivityFile(Integer id);
-	public String updateActivityFile(Integer id,String fileName,String url,String type,Integer activityId,Integer workId);
+	public String insertActivityFile(String fileName,String url,String type,Long activityId,Long workId);
+	public String deleteActivityFile(Long id);
+	public String updateActivityFile(Long id,String fileName,String url,String type,Long activityId,Long workId);
 	//return type Pair<fileName,fileUrl>
-	public List<Pair<String,String>> queryFilesByActivityId(Integer activityId);
-	public List<Pair<String,String>> queryFilesByWorkId(Integer workId); 
+	public List<Pair<String,String>> queryFilesByActivityId(Long activityId);
+	public List<Pair<String,String>> queryFilesByWorkId(Long workId); 
 }

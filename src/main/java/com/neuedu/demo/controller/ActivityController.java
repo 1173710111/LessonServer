@@ -12,9 +12,9 @@ public interface ActivityController {
 		return controller;
 	}
 	
-	public String insertActivity(long lessonId,String title,String introduction,String deadline,int teamVolume);
-	public String deleteActivity(Integer id);
-	public String updateActivity(long lessonId,String title,String introduction,String deadline,int teamVolume);
-	public Activity queryActivityInfoById(Integer id);
-	public List<Activity> queryActivitysByLessonId(Integer id);
+	public String insertActivity(Integer lessonId,String title,String introduction,String deadline,int teamVolume);
+	public String deleteActivity(Long id);
+	public String updateActivity(Integer lessonId,String title,String introduction,String deadline,int teamVolume);
+	public Activity queryActivityInfoById(Long id);
+	public List<Activity> queryActivitysByLessonId(Long id);
 }

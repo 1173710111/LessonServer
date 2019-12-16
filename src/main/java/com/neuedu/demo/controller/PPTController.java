@@ -12,10 +12,10 @@ public interface PPTController {
 		return controller;
 	}
 	
-	public String insertPPT(Integer lessonId,Integer sublessonId);
-	public String deletePPT(Integer id);
-	public String updatePPT(Integer id,Integer lessonId,Integer sublessonId);
-	public PPT queryPPTInfoById(Integer id);
-	public List<PPT> queryPPTsBySubLessonId(Integer id); 
+	public String insertPPT(Long lessonId,Long sublessonId);
+	public String deletePPT(Long id);
+	public String updatePPT(Long id,Long lessonId,Long sublessonId);
+	public PPT queryPPTInfoById(Long id);
+	public List<PPT> queryPPTsBySubLessonId(Long id); 
 
 }

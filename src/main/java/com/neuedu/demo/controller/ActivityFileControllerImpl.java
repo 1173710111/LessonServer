@@ -13,34 +13,35 @@ public class ActivityFileControllerImpl implements ActivityFileController {
 	}
 
 	@Override
-	public String insertActivityFile(String fileName, String url, String type, Integer activityId, Integer workId) {
+	public String insertActivityFile(String fileName, String url, String type, Long activityId, Long workId) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public String deleteActivityFile(Integer id) {
+	public String deleteActivityFile(Long id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public String updateActivityFile(Integer id, String fileName, String url, String type, Integer activityId,
-			Integer workId) {
+	public String updateActivityFile(Long id, String fileName, String url, String type, Long activityId, Long workId) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public List<Pair<String, String>> queryFilesByActivityId(Integer activityId) {
+	public List<Pair<String, String>> queryFilesByActivityId(Long activityId) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public List<Pair<String, String>> queryFilesByWorkId(Integer workId) {
+	public List<Pair<String, String>> queryFilesByWorkId(Long workId) {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+
 
 }

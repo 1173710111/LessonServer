@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
 
-import com.neuedu.demo.domain.Work;
+import com.neuedu.demo.domain.StudentWork;
 
 public class WorkControllerImpl implements WorkController {
 
@@ -13,31 +13,31 @@ public class WorkControllerImpl implements WorkController {
 	}
 
 	@Override
-	public String insertWork(Integer activityId) {
+	public String insertWork(Long activityId) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public String deleteWork(Integer id) {
+	public String deleteWork(Long id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public String updateWork(Integer id, Integer activityId) {
+	public String updateWork(Long id, Long activityId) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Work queryWorkInfoById(Integer id) {
+	public StudentWork queryWorkInfoById(Long id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public List<Work> queryWorksByActivityId(Integer activityId) {
+	public List<StudentWork> queryWorksByActivityId(Long activityId) {
 		// TODO Auto-generated method stub
 		return null;
 	}

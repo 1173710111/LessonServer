@@ -7,8 +7,9 @@ import com.neuedu.demo.domain.UserInfo;
 @Mapper
 public interface StudentMapper {
 	public int insertStudent(UserInfo userinfo);
-	public void deleteStudent(Integer id);
+	public void deleteStudent(Long id);
 	public void updateStudent(UserInfo userinfo);
-	public UserInfo queryStudentById(Integer id);
-	public Integer count();
+	public UserInfo queryStudentById(Long id);
+	public Long count();
+	public Integer isExistent(Long id);
 }

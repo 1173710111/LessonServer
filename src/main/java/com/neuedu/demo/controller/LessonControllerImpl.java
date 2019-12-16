@@ -18,7 +18,7 @@ public class LessonControllerImpl implements LessonController {
 	}
 
 	@Override
-	public String deleteLesson(Integer id) {
+	public String deleteLesson(Long id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -31,10 +31,10 @@ public class LessonControllerImpl implements LessonController {
 	}
 
 	@Override
-	public Lesson queryLessonInfoById(Integer id) {
+	public Lesson queryLessonInfoById(Long id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-
+	
 }

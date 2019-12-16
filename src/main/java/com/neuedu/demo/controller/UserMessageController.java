@@ -10,9 +10,9 @@ public interface UserMessageController {
 		return controller;
 	}
 	
-	public String insertUserMessage(Integer MessageId,String userIdentity,Integer userId);
-	public String deleteUserMessage(String userIdentity,Integer userId,Integer MessageId);
-	public List<Integer> queryUserMessages(String userIdentity,Integer userId);
-	public List<Integer> queryMessageUsersByUserId(Integer MessageId); 
+	public String insertUserMessage(Long MessageId,String userIdentity,Long userId);
+	public String deleteUserMessage(String userIdentity,Long userId,Long MessageId);
+	public List<Long> queryUserMessages(String userIdentity,Long userId);
+	public List<Long> queryMessageUsersByUserId(Long MessageId); 
 	
 }

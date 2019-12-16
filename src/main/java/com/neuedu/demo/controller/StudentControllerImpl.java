@@ -19,10 +19,10 @@ public class StudentControllerImpl implements StudentController  {
 	@Override
 	public String insertStudent(String username,String password,String image){
 		UserInfo student=new UserInfo(username,password,0,image,"student");
-		Integer cnt=service.count();
+		Long cnt=service.count();
 		service.insertStudent(student);
 		long id = student.getId();
-		Integer cnt_after=service.count();
+		Long cnt_after=service.count();
 		cnt++;
 		if (cnt==cnt_after){
 			return "success:id="+id;
@@ -32,11 +32,11 @@ public class StudentControllerImpl implements StudentController  {
 		
 	}
 	@Override
-	public String deleteStudent(Integer id) {
-		Integer cnt=service.count();
+	public String deleteStudent(Long id) {
+		Long cnt=service.count();
 		service.deleteStudent(id);
 		cnt--;
-		Integer cnt_after=service.count();
+		Long cnt_after=service.count();
 		if (cnt==cnt_after){
 			return "success:cnt="+cnt;
 		}else {
@@ -44,7 +44,7 @@ public class StudentControllerImpl implements StudentController  {
 		}
 	}
 	@Override
-	public String updateStudent(Integer id, String username, String password, String image) {
+	public String updateStudent(Long id, String username, String password, String image) {
 		UserInfo student=new UserInfo(username,password,id,image,"student");
 		service.updateStudent(student);
 		UserInfo studentAfter=this.queryStudentInfoById(id);
@@ -55,7 +55,7 @@ public class StudentControllerImpl implements StudentController  {
 		}
 	}
 	@Override
-	public UserInfo queryStudentInfoById(Integer id) {
+	public UserInfo queryStudentInfoById(Long id) {
 		UserInfo student=service.queryStudentById(id);
 		UserInfo newStudent=new UserInfo(student.getUsername(),student.getPassword(),student.getId(),student.getImage(),"student");
 		return newStudent;

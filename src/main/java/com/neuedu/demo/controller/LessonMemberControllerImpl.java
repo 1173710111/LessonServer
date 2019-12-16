@@ -11,27 +11,28 @@ public class LessonMemberControllerImpl implements LessonMemberController {
 	}
 
 	@Override
-	public String insertLessonMember(int lessonId, int MemberId) {
+	public String insertLessonMember(Long lessonId, Long MemberId) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public String deleteLessonMember(int lessonId, int MemberId) {
+	public String deleteLessonMember(Long lessonId, Long MemberId) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public List<Integer> queryLessonsByMemberId(Integer id) {
+	public List<Long> queryLessonsByMemberId(Long id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public List<Integer> queryMembersByLessonId(Integer id) {
+	public List<Long> queryMembersByLessonId(Long id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
 
 }

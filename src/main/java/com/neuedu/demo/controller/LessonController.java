@@ -11,7 +11,7 @@ public interface LessonController {
 	}
 	
 	public String insertLesson(String name,String introduction,String timeStart,String timeEnd,String password,String image);
-	public String deleteLesson(Integer id);
+	public String deleteLesson(Long id);
 	public String updateLesson(String name,String introduction,String timeStart,String timeEnd,String password,String image);
-	public Lesson queryLessonInfoById(Integer id);
+	public Lesson queryLessonInfoById(Long id);
 }

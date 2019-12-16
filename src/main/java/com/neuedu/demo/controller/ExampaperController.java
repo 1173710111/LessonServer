@@ -12,9 +12,9 @@ public interface ExampaperController {
 		return controller;
 	}
 	
-	public String insertExampaper(String publishedTime,String lastTime,Integer lessonId,Integer sublessonId);
-	public String deleteExampaper(Integer id);
-	public String updateExampaper(long id,String publishedTime,String lastTime,Integer lessonId,Integer sublessonId);
-	public ExamPaper queryExampaperInfoById(Integer id);
-	public List<ExamPaper> queryExampapersBySublessonId(Integer id);
+	public String insertExampaper(String publishedTime,String lastTime,Long lessonId,Long sublessonId);
+	public String deleteExampaper(Long id);
+	public String updateExampaper(Long id,String publishedTime,String lastTime,Long lessonId,Long sublessonId);
+	public ExamPaper queryExampaperInfoById(Long id);
+	public List<ExamPaper> queryExampapersBySublessonId(Long id);
 }

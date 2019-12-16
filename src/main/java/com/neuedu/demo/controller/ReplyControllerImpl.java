@@ -13,39 +13,39 @@ public class ReplyControllerImpl implements ReplyController {
 	}
 
 	@Override
-	public String insertReply(String userIdentity, Integer userId, String userName, String time, String content,
-			Integer discussionId, Integer upReplyId) {
+	public String insertReply(String userIdentity, Long userId, String userName, String time, String content,
+			Long discussionId, Long upReplyId) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public String deleteReply(Integer id) {
+	public String deleteReply(Long id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public String updateReply(Integer id, String userIdentity, Integer userId, String userName, String time,
-			String content, Integer discussionId, Integer upReplyId) {
+	public String updateReply(Long id, String userIdentity, Long userId, String userName, String time,
+			String content, Long discussionId, Long upReplyId) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Reply queryReplyInfoById(Integer id) {
+	public Reply queryReplyInfoById(Long id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public List<Reply> queryReplysByDiscussionId(Integer discussionId) {
+	public List<Reply> queryReplysByDiscussionId(Long discussionId) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public List<Reply> queryReplysByUser(String identity, Integer userId) {
+	public List<Reply> queryReplysByUser(String identity, Long userId) {
 		// TODO Auto-generated method stub
 		return null;
 	}

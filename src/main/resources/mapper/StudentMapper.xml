@@ -8,7 +8,7 @@
 		user_stu(name,password,image) 
 		VALUES(#{username},#{password},#{image});
 	</insert>
-	<delete id="deleteStudent" parameterType="Integer">
+	<delete id="deleteStudent" parameterType="Long">
 		DELETE FROM user_stu
 		WHERE id=#{id};
 	</delete>
@@ -20,18 +20,21 @@
 		image=#{image}
 		WHERE id=#{id};
 	</update>
-	<select id="queryStudentById" parameterType="Integer" resultMap="myUserInfo">
+	<select id="queryStudentById" parameterType="Long" resultMap="myUserInfo">
 		SELECT id,name,password,image
 		FROM user_stu
 		WHERE id=#{id};
 	</select> 
+	<select id="isExistent"  parameterType="Long" resultType="Integer">
+		select COUNT(*) from user_stu where id=#{id}
+	</select>
 	<resultMap type="UserInfo" id="myUserInfo">
 		<id column="id" property="id" />
 		<result column="name" property="username" />
 		<result column="password" property="password" />
 		<result column="image" property="image" />
 	</resultMap>
-	<select id="count" resultType="Integer">
+	<select id="count" resultType="Long">
 		select count(*) as count from user_stu
 	</select>
 </mapper>

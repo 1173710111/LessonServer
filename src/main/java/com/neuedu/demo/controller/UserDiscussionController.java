@@ -11,10 +11,10 @@ public interface UserDiscussionController {
 		return controller;
 	}
 	
-	public String insertUserDiscussion(Integer discussionId,String userIdentity,Integer userId,int starState);
-	public String deleteUserDiscussion(String userIdentity,Integer userId,Integer discussionId);
-	public String updateUserDiscussionState(String userIdentity,Integer userId,Integer discussionId,int starState);
-	public List<Integer> queryUserDiscussions(String userIdentity,Integer userId);
-	public List<Integer> queryDiscussionUsersByUserId(Integer discussionId); 
+	public String insertUserDiscussion(Long discussionId,String userIdentity,Long userId,int starState);
+	public String deleteUserDiscussion(String userIdentity,Long userId,Long discussionId);
+	public String updateUserDiscussionState(String userIdentity,Long userId,Long discussionId,int starState);
+	public List<Long> queryUserDiscussions(String userIdentity,Long userId);
+	public List<Long> queryDiscussionUsersByUserId(Long discussionId); 
 	
 }

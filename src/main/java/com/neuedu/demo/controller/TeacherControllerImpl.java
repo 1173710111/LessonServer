@@ -17,19 +17,19 @@ public class TeacherControllerImpl implements TeacherController {
 	}
 
 	@Override
-	public String deleteTeacher(Integer id) {
+	public String deleteTeacher(Long id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public String updateTeacher(Integer id, String username, String password, String image) {
+	public String updateTeacher(Long id, String username, String password, String image) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public UserInfo queryTeacherInfoById(Integer id) {
+	public UserInfo queryTeacherInfoById(Long id) {
 		// TODO Auto-generated method stub
 		return null;
 	}

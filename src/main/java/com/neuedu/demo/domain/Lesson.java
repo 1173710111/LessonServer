@@ -10,6 +10,9 @@ public class Lesson {
 	private LessonInfo mainInfo;
 	private LessonContained contain;
 	
+	public long getId(){
+		return this.id;
+	}
 	public LessonInfo getMainInfo() {
 		return mainInfo;
 	}

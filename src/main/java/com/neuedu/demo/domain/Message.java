@@ -40,6 +40,9 @@ public class Message {
 	public String getType(){
 		return this.type;
 	}
+	public String getSender(){
+		return this.sender;
+	}
 	
 	public String makeContent(){
 		String content=new String("");
@@ -127,8 +130,6 @@ public class Message {
 		content=content+"@"+newReply.getUser().getMainInfo().getId()+"："+newReply.getContent();
 		return content;
 	}
-	
-		 
 	
 	public String getContent(){
 		return this.content;

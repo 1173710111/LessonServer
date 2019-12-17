@@ -24,7 +24,7 @@ public class LessonControllerImpl implements LessonController {
 	}
 
 	@Override
-	public String updateLesson(String name, String introduction, String timeStart, String timeEnd, String password,
+	public String updateLesson(Long LessonId,String name, String introduction, String timeStart, String timeEnd, String password,
 			String image) {
 		// TODO Auto-generated method stub
 		return null;

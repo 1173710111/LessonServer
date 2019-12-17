@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class LessonInfo {
+	private long id;
 	private String name;
 	private String introduction;
 	private String timeStart;
@@ -11,9 +12,10 @@ public class LessonInfo {
 	private String password;
 	private String image;
 	private List<Teacher> teachers;
-	public LessonInfo(String name, String introduction, String timeStart, String timeEnd, String password, String image,
+	public LessonInfo(long id,String name, String introduction, String timeStart, String timeEnd, String password, String image,
 			List<Teacher> teachers) {
 		super();
+		this.id=id;
 		this.name = name;
 		this.introduction = introduction;
 		this.timeStart = timeStart;
@@ -21,6 +23,9 @@ public class LessonInfo {
 		this.password = password;
 		this.image = image;
 		this.teachers = teachers;
+	}
+	public long getId(){
+		return this.id;
 	}
 	public String getImage() {
 		return image;

@@ -20,6 +20,7 @@ public class UserInfo {
 		this.id = id;
 		this.image = image;
 	}
+	
 	public String getUsername() {
 		return username;
 	}

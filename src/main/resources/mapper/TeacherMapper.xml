@@ -2,31 +2,31 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0" 
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.neuedu.demo.dao.StudentMapper">
-	<insert id="insertStudent" parameterType="UserInfo" useGeneratedKeys="true" keyProperty="id" keyColumn="id">
+<mapper namespace="com.neuedu.demo.dao.TeacherMapper">
+	<insert id="insertTeacher" parameterType="UserInfo" useGeneratedKeys="true" keyProperty="id" keyColumn="id">
 		INSERT INTO
-		user_stu(name,password,image) 
+		user_tea(name,password,image) 
 		VALUES(#{username},#{password},#{image});
 	</insert>
-	<delete id="deleteStudent" parameterType="Long">
-		DELETE FROM user_stu
+	<delete id="deleteTeacher" parameterType="Long">
+		DELETE FROM user_tea
 		WHERE id=#{id};
 	</delete>
-	<update id="updateStudent" parameterType="UserInfo">
-		UPDATE user_stu
+	<update id="updateTeacher" parameterType="UserInfo">
+		UPDATE user_tea
 		SET
 		name=#{username},
 		password=#{password},
 		image=#{image}
 		WHERE id=#{id};
 	</update>
-	<select id="queryStudentById" parameterType="Long" resultMap="myUserInfo">
-		SELECT id,name,password,image
-		FROM user_stu
+	<select id="queryTeacherById" parameterType="Long" resultMap="myUserInfo">
+		SELECT name,password,id,image
+		FROM user_tea
 		WHERE id=#{0};
 	</select> 
 	<select id="isExistent"  parameterType="Long" resultType="Integer">
-		select COUNT(*) as count from user_stu where id=#{id}
+		select COUNT(*) as count from user_tea where id=#{id}
 	</select>
 	<resultMap type="UserInfo" id="myUserInfo">
 		<id column="id" property="id" />
@@ -35,6 +35,6 @@
 		<result column="image" property="image" />
 	</resultMap>
 	<select id="count" resultType="Long">
-		select count(*) as count from user_stu
+		select count(*) as count from user_tea
 	</select>
 </mapper>

@@ -15,7 +15,7 @@ public class StudentControllerTest {
 	private SqlSession session=null;
 	private StudentController controller;
 	private String username="拉普兰德做得到吗";
-	private String password="123456";
+	private String password="lagouzi";
 	private String image="C:\\Users\\admin\\Desktop\\HIT\\images\\logo.png";
 	
 	@Before
@@ -46,7 +46,7 @@ public class StudentControllerTest {
 	}
 	@Test
 	public void queryTest(){
-		String result=controller.queryStudentInfoById((long) 5).toString();
+		String result=controller.queryStudentInfoById((long) 4).toString();
 		System.out.print(result);
 	}
 	@Test

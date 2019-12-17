@@ -1,9 +1,7 @@
 package com.neuedu.demo.domain;
 
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class ExamPaper {
@@ -23,9 +21,9 @@ public class ExamPaper {
 		this.lastTime = lastTime;
 		this.questions=new ArrayList<Question>();
 	}
+	
 	public Score getScore() {
 		if (this.score==null){
-			Score score=new Score();
 			return score;
 		}else{
 			return this.score;

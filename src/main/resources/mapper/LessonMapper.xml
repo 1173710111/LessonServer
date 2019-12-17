@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.neuedu.demo.dao.LessonMapper">
+	<insert id="insertLesson" parameterType="LessonInfo" useGeneratedKeys="true" keyProperty="id" keyColumn="id">
+		INSERT INTO
+		lesson(name,introduction,,time_start,time_end,password,image) 
+		VALUES(#{name},#{introduction},#{timeStart},#{timeEnd},#{password},#{image});
+	</insert>
+	<delete id="deleteLesson" parameterType="Long">
+		DELETE FROM lesson
+		WHERE id=#{id};
+	</delete>
+	<update id="updateLesson" parameterType="LessonInfo">
+		UPDATE lesson
+		SET
+		name=#{name},
+		introduction=#{introduction},
+		time_start=#{timeStart},
+		time_end=#{timeEnd},
+		password=#{password},
+		image=#{image}
+		WHERE id=#{0};
+	</update>
+	<select id="queryLessonById" parameterType="Long" resultMap="myLessonInfo">
+		SELECT id,name,introduction,time_start,time_end,password,image
+		FROM lesson
+		WHERE id=#{id};
+	</select> 
+	<select id="isExistent"  parameterType="Long" resultType="Integer">
+		select COUNT(*) as count from lesson where id=#{id}
+	</select>
+	<resultMap type="LessonInfo" id="myUserInfo">
+		<id column="id" property="id" />
+		<result column="name" property="username" />
+		<result column="introduction" property="introduction"/>
+		<result column="time_start" property="timeStart"/>
+		<result column="time_end" property="timeEnd"/>
+		<result column="password" property="password" />
+		<result column="image" property="image" />
+	</resultMap>
+	<select id="count" resultType="Long">
+		select count(*) as count from lesson
+	</select>
+</mapper>

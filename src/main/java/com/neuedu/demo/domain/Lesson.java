@@ -1,18 +1,14 @@
 package com.neuedu.demo.domain;
 
 public class Lesson {
-	public Lesson(int id, LessonInfo mainInfo) {
+	public Lesson(LessonInfo mainInfo,LessonContained contain) {
 		super();
-		this.id = id;
 		this.mainInfo = mainInfo;
+		this.contain=contain;
 	}
-	private int id;
 	private LessonInfo mainInfo;
 	private LessonContained contain;
 	
-	public long getId(){
-		return this.id;
-	}
 	public LessonInfo getMainInfo() {
 		return mainInfo;
 	}

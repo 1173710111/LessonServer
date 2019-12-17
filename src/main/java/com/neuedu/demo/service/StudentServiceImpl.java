@@ -28,14 +28,18 @@ public class StudentServiceImpl implements StudentService {
 
 	@Override
 	public void deleteStudent(Long id) {
-		mapper.deleteStudent(id);
-		session.commit();
+		if(mapper.isExistent(id)>0){
+			mapper.deleteStudent(id);
+			session.commit();
+		}
 	}
 
 	@Override
 	public void updateStudent(UserInfo student) {
-		mapper.updateStudent(student);
-		session.commit();
+		if(mapper.isExistent(student.getId())>0){
+			mapper.updateStudent(student);
+			session.commit();
+		}
 	}
 
 	@Override

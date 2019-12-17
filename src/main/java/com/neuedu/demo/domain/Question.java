@@ -6,6 +6,7 @@ import java.util.List;
 import org.apache.ibatis.session.SqlSession;
 
 import com.neuedu.demo.controller.LessonController;
+import com.neuedu.demo.controller.LessonMemberController;
 
 public class Question {
 	private long id;
@@ -56,11 +57,11 @@ public class Question {
 	}
 	private void initStudentAnswers(){
 		SqlSession session=NewSession.getSession();
-		LessonController lessonController=LessonController.empty(session);
-		Lesson lesson=lessonController.queryLessonInfoById(this.sublessonId);
-		int num=lesson.getContain().getMembers().size();
+		LessonMemberController controller=LessonMemberController.empty(session);
+		List<Long> memberIds=controller.queryMembersByLessonId(this.lessonId);
+		int num=memberIds.size();
 		for (int i=0;i<num;i++){
-			StudentAnswer newStdAns=new StudentAnswer(lesson.getContain().getMembers().get(i).getMainInfo().getId(),
+			StudentAnswer newStdAns=new StudentAnswer(memberIds.get(i),
 					"",0,0,this.id);
 			this.studentAnswers.add(newStdAns);
 		}

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.neuedu.demo.dao.LessonTeacherMapper">
+	<insert id="insertLessonTeacher" parameterType="Pair">
+		INSERT INTO
+		lesson_teacher(lesson_id,teacher_id) 
+		VALUES(#{value1},#{value2});
+	</insert>
+	<delete id="deleteLessonTeacher" parameterType="Pair">
+		DELETE FROM lesson_teacher
+		WHERE lesson_id=#{value1} and teacher_id=#{value2};
+	</delete>
+	<select id="queryLessonsByTeacherId" parameterType="Long" resultType="Long">
+		SELECT lesson_id 
+		FROM lesson_teacher
+		WHERE teacher_id=#{0};
+	</select> 
+	<select id="queryTeachersByLessonId" parameterType="Long" resultType="Long">
+		SELECT DISTINCT teacher_id
+		FROM lesson_teacher
+		WHERE lesson_id=#{0};
+	</select> 
+	<select id="isExistent"  parameterType="Pair" resultType="Integer">
+		select COUNT(*) as count from lesson_teacher 
+		where lesson_id=#{value1} and teacher_id=#{value2};
+	</select>
+	<select id="count" resultType="Long">
+		select COUNT(*) as count from lesson_teacher 
+	</select>
+</mapper>

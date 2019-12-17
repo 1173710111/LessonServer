@@ -14,7 +14,6 @@ public class LessonInfo {
 	private List<Teacher> teachers;
 	public LessonInfo(long id,String name, String introduction, String timeStart, String timeEnd, String password, String image,
 			List<Teacher> teachers) {
-		super();
 		this.id=id;
 		this.name = name;
 		this.introduction = introduction;
@@ -24,6 +23,20 @@ public class LessonInfo {
 		this.image = image;
 		this.teachers = teachers;
 	}
+	
+	
+	public LessonInfo(long id, String name, String introduction, String timeStart, String timeEnd, String password,
+			String image) {
+		this.id = id;
+		this.name = name;
+		this.introduction = introduction;
+		this.timeStart = timeStart;
+		this.timeEnd = timeEnd;
+		this.password = password;
+		this.image = image;
+	}
+
+
 	public long getId(){
 		return this.id;
 	}
@@ -58,4 +71,11 @@ public class LessonInfo {
 		}
 		return names;
 	}
+	@Override
+	public String toString() {
+		return "LessonInfo [id=" + id + ", name=" + name + ", introduction=" + introduction + ", timeStart=" + timeStart
+				+ ", timeEnd=" + timeEnd + ", password=" + password + ", image=" + image + ", teachers=" + teachers
+				+ "]";
+	}
+	
 }

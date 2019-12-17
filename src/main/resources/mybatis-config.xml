@@ -6,6 +6,9 @@
 <properties resource="dbconfig.properties"></properties>
  <typeAliases>
   	<typeAlias alias="UserInfo" type="com.neuedu.demo.domain.UserInfo" />
+  	<typeAlias alias="LessonInfo" type="com.neuedu.demo.domain.LessonInfo" />
+  	<typeAlias alias="Pair" type="com.neuedu.demo.tool.Pair" />
+  	
   </typeAliases>
   <environments default="development">
     <environment id="development">
@@ -21,5 +24,8 @@
   <mappers>
     <mapper resource="mapper/StudentMapper.xml"/>
     <mapper resource="mapper/TeacherMapper.xml"/>
+    <mapper resource="mapper/LessonMapper.xml"/>
+    <mapper resource="mapper/LessonTeacherMapper.xml"/>
+    <mapper resource="mapper/LessonMemberMapper.xml"/>
   </mappers>
 </configuration>

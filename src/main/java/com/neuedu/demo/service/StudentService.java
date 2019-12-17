@@ -1,7 +1,5 @@
 package com.neuedu.demo.service;
 
-import java.io.IOException;
-
 import org.apache.ibatis.session.SqlSession;
 
 import com.neuedu.demo.domain.UserInfo;

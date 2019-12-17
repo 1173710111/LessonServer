@@ -3,7 +3,6 @@ package com.neuedu.demo.service;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.neuedu.demo.dao.StudentMapper;
 import com.neuedu.demo.dao.TeacherMapper;
 import com.neuedu.demo.domain.UserInfo;
 
@@ -26,14 +25,18 @@ public class TeacherServiceImpl implements TeacherService {
 
 	@Override
 	public void deleteTeacher(Long id) {
-		mapper.deleteTeacher(id);
-		session.commit();
+		if (mapper.isExistent(id)>0){
+			mapper.deleteTeacher(id);
+			session.commit();
+		}
 	}
 
 	@Override
 	public void updateTeacher(UserInfo teacher) {
-		mapper.updateTeacher(teacher);
+		if(mapper.isExistent(teacher.getId())>0){
+			mapper.updateTeacher(teacher);
 		session.commit();
+		}
 	}
 
 	@Override

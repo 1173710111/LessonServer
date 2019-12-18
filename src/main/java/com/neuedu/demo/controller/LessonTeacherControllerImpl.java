@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.neuedu.demo.service.LessonService;
 import com.neuedu.demo.service.LessonTeacherService;
-import com.neuedu.demo.tool.Pair;
+import com.neuedu.demo.tool.PairLongs;
 
 public class LessonTeacherControllerImpl implements LessonTeacherController {
 	@Autowired
@@ -18,7 +18,7 @@ public class LessonTeacherControllerImpl implements LessonTeacherController {
 
 	@Override
 	public String insertLessonTeacher(Long lessonId, Long teacherId) {
-		Pair pair=new Pair(lessonId,teacherId);
+		PairLongs pair=new PairLongs(lessonId,teacherId);
 		Long cnt=service.count();
 		service.insertLessonTeacher(pair);
 		Long cnt_after=service.count();
@@ -32,7 +32,7 @@ public class LessonTeacherControllerImpl implements LessonTeacherController {
 
 	@Override
 	public String deleteLessonTeacher(Long lessonId, Long teacherId) {
-		Pair pair=new Pair(lessonId,teacherId);
+		PairLongs pair=new PairLongs(lessonId,teacherId);
 		Long cnt=service.count();
 		service.deleteLessonTeacher(pair);
 		Long cnt_after=service.count();

@@ -1,5 +1,6 @@
 package com.neuedu.demo.domain;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
@@ -16,9 +17,9 @@ public class Activity {
 	private String publishedTime;
 	private String deadline;
 	private int teamVolume;
-	private List<String> downFiles;
-	private List<StudentWork> studentworks;
-	public Activity(long id,long lessonId, String type, String title, String introduction,String publishedTime, String deadline,
+	private List<String> downFiles=new ArrayList<String>();
+	private List<StudentWork> studentworks=new ArrayList<StudentWork>();
+	/*public Activity(long id,long lessonId, String type, String title, String introduction,String publishedTime, String deadline,
 			int teamVolume ,List<String> downFiles) {
 		super();
 		this.id = id;
@@ -31,23 +32,32 @@ public class Activity {
 		this.teamVolume = teamVolume;
 		setNum();
 	}
+	*/
 
-	private void setNum(){
-		SqlSession session=NewSession.getSession();
-		ActivityController controller=ActivityController.empty(session);
-		List<Activity> activities=controller.queryActivitysByLessonId(this.lessonId);
+	public Activity(long id, long lessonId, String title, String introduction, String deadline,
+			Integer teamVolume, String publishedTime) {
+		this.id = id;
+		this.lessonId = lessonId;
+		this.title = title;
+		this.introduction = introduction;
+		this.deadline = deadline;
+		this.teamVolume = teamVolume;
+		this.publishedTime = publishedTime;
+	}
+
+
+	public void setNum(List<Activity> activities){
 		int num=-1;
 		for (int i=0;i<activities.size();i++){
 			Activity activity=activities.get(i);
 			if (activity.getId()==this.id){
-				num=i;
+				num=i+1;
 				break;
 			}
 		}
 		if (num==-1) 
 			num=activities.size();
 		this.num=num;
-		session.close();
 	}
 	public long getNum(){
 		return this.num;
@@ -87,6 +97,14 @@ public class Activity {
 	}
 	public int getTeamVolume() {
 		return teamVolume;
+	}
+
+
+	@Override
+	public String toString() {
+		return "Activity [id=" + id + ", lessonId=" + lessonId + ", num=" + num + ", title=" + title + ", introduction="
+				+ introduction + ", publishedTime=" + publishedTime + ", deadline=" + deadline + ", teamVolume="
+				+ teamVolume + "]";
 	}
 	
 }

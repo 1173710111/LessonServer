@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.neuedu.demo.dao.ActivityFileMapper">
+	<insert id="insertUpFile" parameterType="ActivityFile" useGeneratedKeys="true" keyProperty="id" keyColumn="id">
+		INSERT INTO
+		activity_file(file_name,url,type,activity_id,work_id) 
+		VALUES(#{fileName},#{url},#{type},#{activityId},#{workId})
+	</insert>
+	<insert id="insertDownFile" parameterType="ActivityFile" useGeneratedKeys="true" keyProperty="id" keyColumn="id">
+		INSERT INTO
+		activity_file(file_name,url,type,activity_id) 
+		VALUES(#{fileName},#{url},#{type},#{activityId})
+	</insert>
+	<delete id="deleteActivityFile" parameterType="Long">
+		DELETE FROM activity_file
+		WHERE id=#{id};
+	</delete>
+	<update id="updateUpFile" parameterType="ActivityFile">
+		UPDATE activity_file
+		SET
+		id=#{id},
+		file_name=#{fileName},
+		url=#{url},
+		type=#{type},
+		activity_id=#{activityId},
+		work_id=#{workId}
+		WHERE id=#{id};
+	</update>
+	<update id="updateDownFile" parameterType="ActivityFile">
+		UPDATE activity_file
+		SET
+		id=#{id},
+		file_name=#{fileName},
+		url=#{url},
+		type=#{type},
+		activity_id=#{activityId}
+		WHERE id=#{id};
+	</update>
+	<select id="queryActivityFileById" parameterType="Long" resultMap="MyInfo">
+		SELECT id,file_name,url,activity_id,type,IFNULL(work_id,0)
+		FROM activity_file
+		WHERE id=#{0};
+	</select> 
+	<select id="queryFilesByActivityId" parameterType="Long" resultMap="MyInfo">
+		SELECT id,file_name,url,activity_id,type,IFNULL(work_id,0)
+		FROM activity_file
+		WHERE activity_id=#{0};
+	</select> 
+	<select id="queryFilesByWorkId" parameterType="Long" resultMap="MyInfo">
+		SELECT id,file_name,url,activity_id,type,IFNULL(work_id,0)
+		FROM activity_file
+		WHERE work_id=#{0};
+	</select> 
+	<select id="isExistent"  parameterType="Long" resultType="Integer">
+		select COUNT(*) as count from activity_file where id=#{id}
+	</select>
+	<resultMap type="ActivityFile" id="MyInfo">
+		<id column="id" property="id" />
+		<result column="file_name" property="fileName" />
+		<result column="url" property="url"/>
+		<result column="activity_id" property="activityId"/>
+		<result column="type" property="type"/>
+		<result column="workId" property="workId"/>
+	</resultMap>
+	<select id="count" resultType="Long">
+		select count(*) as count from activity_file
+	</select>
+</mapper>

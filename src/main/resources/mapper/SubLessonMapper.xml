@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.neuedu.demo.dao.SubLessonMapper">
+	<insert id="insertSubLesson" parameterType="SubLesson" useGeneratedKeys="true" keyProperty="id" keyColumn="id">
+		INSERT INTO
+		sublesson(name,lesson_id) 
+		VALUES(#{name},#{lessonId});
+	</insert>
+	<delete id="deleteSubLesson" parameterType="Long">
+		DELETE FROM sublesson
+		WHERE id=#{id};
+	</delete>
+	<update id="updateSubLesson" parameterType="SubLesson">
+		UPDATE sublesson
+		SET
+		name=#{name},
+		lesson_id=#{lessonId}
+		WHERE id=#{id};
+	</update>
+	<select id="querySubLessonById" parameterType="Long" resultType="SubLesson">
+		SELECT id id,lesson_id lessonId,name name
+		FROM sublesson
+		WHERE id=#{0};
+	</select> 
+	<select id="querySubLessonsByLessonId" parameterType="Long" resultType="SubLesson">
+		SELECT id id,lesson_id lessonId,name name
+		FROM sublesson
+		WHERE lesson_id=#{0};
+	</select> 
+	<select id="isExistent"  parameterType="Long" resultType="Integer">
+		select COUNT(*) as count from sublesson where id=#{id}
+	</select>
+	<select id="count" resultType="Long">
+		select count(*) as count from sublesson
+	</select>
+</mapper>

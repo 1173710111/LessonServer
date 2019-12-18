@@ -1,14 +1,12 @@
 package com.neuedu.demo.controller;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 
 import com.neuedu.demo.domain.LessonInfo;
 import com.neuedu.demo.service.LessonService;
-
+@Controller
 public class LessonControllerImpl implements LessonController {
 	@Autowired
 	private LessonService service;

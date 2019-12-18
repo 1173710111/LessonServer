@@ -7,7 +7,11 @@
  <typeAliases>
   	<typeAlias alias="UserInfo" type="com.neuedu.demo.domain.UserInfo" />
   	<typeAlias alias="LessonInfo" type="com.neuedu.demo.domain.LessonInfo" />
-  	<typeAlias alias="Pair" type="com.neuedu.demo.tool.Pair" />
+  	<typeAlias alias="PairLongs" type="com.neuedu.demo.tool.PairLongs" />
+  	<typeAlias alias="SubLesson" type="com.neuedu.demo.domain.SubLesson" />
+  	<typeAlias alias="Activity" type="com.neuedu.demo.domain.Activity" />
+  	<typeAlias alias="ActivityFile" type="com.neuedu.demo.domain.ActivityFile" />
+  	<typeAlias alias="StudentWork" type="com.neuedu.demo.domain.StudentWork" />
   	
   </typeAliases>
   <environments default="development">
@@ -27,5 +31,9 @@
     <mapper resource="mapper/LessonMapper.xml"/>
     <mapper resource="mapper/LessonTeacherMapper.xml"/>
     <mapper resource="mapper/LessonMemberMapper.xml"/>
+    <mapper resource="mapper/SubLessonMapper.xml"/>
+    <mapper resource="mapper/ActivityMapper.xml"/>
+    <mapper resource="mapper/ActivityFileMapper.xml"/>
+    <mapper resource="mapper/WorkMapper.xml"/>
   </mappers>
 </configuration>

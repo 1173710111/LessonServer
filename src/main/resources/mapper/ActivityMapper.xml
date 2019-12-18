@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.neuedu.demo.dao.ActivityMapper">
+	<insert id="insertActivity" parameterType="Activity" useGeneratedKeys="true" keyProperty="id" keyColumn="id">
+		INSERT INTO
+		activity(lesson_id,title,introduction,deadline,team_volume,published_time) 
+		VALUES(#{lessonId},#{title},#{introduction},#{deadline},#{teamVolume},#{publishedTime});
+	</insert>
+	<delete id="deleteActivity" parameterType="Long">
+		DELETE FROM activity
+		WHERE id=#{id};
+	</delete>
+	<update id="updateActivity" parameterType="Activity">
+		UPDATE activity
+		SET
+		lesson_id=#{lessonId},
+		title=#{title},
+		introduction=#{introduction},
+		deadline=#{deadline},
+		team_volume=#{teamVolume},
+		published_time=#{publishedTime}
+		WHERE id=#{id};
+	</update>
+	<select id="queryActivityById" parameterType="Long" resultMap="myInfo">
+		SELECT id,lesson_id,title,introduction,deadline,team_volume,published_time
+		FROM activity
+		WHERE id=#{0};
+	</select> 
+	<select id="isExistent"  parameterType="Long" resultType="Integer">
+		select COUNT(*) as count from activity where id=#{id}
+	</select>
+	<resultMap type="Activity" id="myInfo">
+		<id column="id" property="id" />
+		<result column="lesson_id" property="lessonId" />
+		<result column="title" property="title"/>
+		<result column="introduction" property="introduction"/>
+		<result column="deadline" property="deadline"/>
+		<result column="team_volume" property="teamVolume"/>
+		<result column="published_time" property="publishedTime"/>
+	</resultMap>
+	<select id="count" resultType="Long">
+		select count(*) as count from activity
+	</select>
+	<select id="queryActivitiesByLessonId"  parameterType="Long" resultMap="myInfo">
+		SELECT id,lesson_id,title,introduction,deadline,team_volume,published_time
+		FROM activity
+		WHERE lesson_id=#{0};
+	</select>
+</mapper>

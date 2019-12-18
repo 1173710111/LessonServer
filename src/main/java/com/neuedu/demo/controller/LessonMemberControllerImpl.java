@@ -6,7 +6,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.neuedu.demo.service.LessonMemberService;
-import com.neuedu.demo.tool.Pair;
+import com.neuedu.demo.tool.PairLongs;
 
 public class LessonMemberControllerImpl implements LessonMemberController {
 	@Autowired
@@ -17,7 +17,7 @@ public class LessonMemberControllerImpl implements LessonMemberController {
 
 	@Override
 	public String insertLessonMember(Long lessonId, Long MemberId) {
-		Pair pair=new Pair(lessonId,MemberId);
+		PairLongs pair=new PairLongs(lessonId,MemberId);
 		Long cnt=service.count();
 		service.insertLessonMember(pair);
 		Long cnt_after=service.count();
@@ -31,7 +31,7 @@ public class LessonMemberControllerImpl implements LessonMemberController {
 
 	@Override
 	public String deleteLessonMember(Long lessonId, Long MemberId) {
-		Pair pair=new Pair(lessonId,MemberId);
+		PairLongs pair=new PairLongs(lessonId,MemberId);
 		Long cnt=service.count();
 		service.deleteLessonMember(pair);
 		Long cnt_after=service.count();

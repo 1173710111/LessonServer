@@ -4,15 +4,15 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 
-import com.neuedu.demo.tool.Pair;
+import com.neuedu.demo.tool.PairLongs;
 
 @Mapper
 public interface LessonTeacherMapper {
-	public void insertLessonTeacher(Pair pair);
-	public void deleteLessonTeacher(Pair pair);
+	public void insertLessonTeacher(PairLongs pair);
+	public void deleteLessonTeacher(PairLongs pair);
 	public List<Long> queryLessonsByTeacherId(Long id);
 	public List<Long> queryTeachersByLessonId(Long id);
-	public Integer isExistent(Pair pair);
+	public Integer isExistent(PairLongs pair);
 	public Long count();
 }
 

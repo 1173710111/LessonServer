@@ -5,19 +5,23 @@ import java.util.List;
 
 public class SubLesson {
 	private long id;
-	private long num;
-	private String number;
-	private String publishedDate;
-	private List<ExamPaper> exampapers;
-	private List<PPT> ppts;
-	
-	public SubLesson(long id, long num, String number, String publishedDate,List<PPT> ppts) {
+	private long lessonId;
+	private String name;
+	private List<ExamPaper> exampapers=new ArrayList<ExamPaper>();
+	private List<PPT> ppts=new ArrayList<PPT>();
+
+	public SubLesson(long id, long lessonId, String name) {
 		super();
 		this.id = id;
-		this.num = num;
-		this.number = number;
-		this.publishedDate = publishedDate;
-		this.exampapers =new ArrayList<ExamPaper>();
+		this.lessonId = lessonId;
+		this.name = name;
+	}
+
+	public SubLesson(long id, long lessonId, String name, List<PPT> ppts) {
+		super();
+		this.id = id;
+		this.lessonId = lessonId;
+		this.name = name;
 		this.ppts = ppts;
 	}
 
@@ -25,16 +29,12 @@ public class SubLesson {
 		return this.id;
 	}
 
-	public long getNum() {
-		return num;
+	public long getLessonId() {
+		return lessonId;
 	}
 
-	public String getNumber() {
-		return number;
-	}
-
-	public String getPublishedDate() {
-		return publishedDate;
+	public String getName() {
+		return name;
 	}
 
 	public List<ExamPaper> getExampapers() {
@@ -61,4 +61,10 @@ public class SubLesson {
 		}
 		return paper;
 	}
+
+	@Override
+	public String toString() {
+		return "SubLesson [id=" + id + ", lessonId=" + lessonId + ", name=" + name + "]";
+	}
+	
 }

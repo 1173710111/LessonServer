@@ -7,7 +7,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.neuedu.demo.dao.LessonMemberMapper;
-import com.neuedu.demo.tool.Pair;
+import com.neuedu.demo.tool.PairLongs;
 
 public class LessonMemberServiceImpl implements LessonMemberService{
 	private SqlSession session;
@@ -18,14 +18,14 @@ public class LessonMemberServiceImpl implements LessonMemberService{
     	mapper=session.getMapper(LessonMemberMapper.class);
 	}
 	@Override
-	public void insertLessonMember(Pair pair) {
+	public void insertLessonMember(PairLongs pair) {
 		if(mapper.isExistent(pair)>0)
 			return;
 		mapper.insertLessonMember(pair);
 		session.commit();
 	}
 	@Override
-	public void deleteLessonMember(Pair pair) {
+	public void deleteLessonMember(PairLongs pair) {
 		if(mapper.isExistent(pair)>0){
 			mapper.deleteLessonMember(pair);
 			session.commit();

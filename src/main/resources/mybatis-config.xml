@@ -35,5 +35,6 @@
     <mapper resource="mapper/ActivityMapper.xml"/>
     <mapper resource="mapper/ActivityFileMapper.xml"/>
     <mapper resource="mapper/WorkMapper.xml"/>
+    <mapper resource="mapper/WorkMemberMapper.xml"/>
   </mappers>
 </configuration>

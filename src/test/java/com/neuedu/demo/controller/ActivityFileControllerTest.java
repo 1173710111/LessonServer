@@ -27,7 +27,7 @@ public class ActivityFileControllerTest {
 	}
 	@Test
 	public void insertTest2(){
-		String result1=controller.insertActivityFile("实验指导书",this.url,"downFile",(long)1,null);
+		String result1=controller.insertActivityFile("第三组实验报告",this.url,"upFile",(long)1,(long)2);
 		System.out.println(result1);
 	}
 	@Test

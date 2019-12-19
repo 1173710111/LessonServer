@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.neuedu.demo.dao.WorkMemberMapper">
+	<insert id="insertWorkMember" parameterType="PairLongs">
+		INSERT INTO
+		work_member(work_id,student_id) 
+		VALUES(#{value1},#{value2});
+	</insert>
+	<delete id="deleteWorkMember" parameterType="PairLongs">
+		DELETE FROM work_member
+		WHERE work_id=#{value1} and student_id=#{value2};
+	</delete>
+	<select id="queryWorksByMemberId" parameterType="Long" resultType="Long">
+		SELECT work_id 
+		FROM work_member
+		WHERE student_id=#{0};
+	</select> 
+	<select id="queryMembersByWorkId" parameterType="Long" resultType="Long">
+		SELECT student_id
+		FROM work_member
+		WHERE work_id=#{0};
+	</select> 
+	<select id="isExistent"  parameterType="PairLongs" resultType="Integer">
+		select COUNT(*) as count from work_member 
+		where work_id=#{value1} and student_id=#{value2};
+	</select>
+	<select id="count" resultType="Long">
+		select COUNT(*) as count from work_member 
+	</select>
+</mapper>

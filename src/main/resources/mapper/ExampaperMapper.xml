@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.neuedu.demo.dao.ExampaperMapper">
+	<insert id="insertExampaper" parameterType="Exampaper" useGeneratedKeys="true" keyProperty="id" keyColumn="id">
+		INSERT INTO
+		exampaper(published_time,last_time,lesson_id,sublesson_id) 
+		VALUES(#{publishedTime},#{lastTime},#{lessonId},#{sublessonId});
+	</insert>
+	<delete id="deleteExampaper" parameterType="Long">
+		DELETE FROM exampaper
+		WHERE id=#{id};
+	</delete>
+	<update id="updateExampaper" parameterType="Exampaper">
+		UPDATE exampaper
+		SET
+		published_time=#{publishedTime},
+		last_time=#{lastTime},
+		lesson_id=#{lessonId},
+		sublesson_id=#{sublessonId}
+		WHERE id=#{id};
+	</update>
+	<select id="queryExampaperById" parameterType="Long" resultMap="myInfo">
+		SELECT id,published_time,last_time,lesson_id,sublesson_id
+		FROM exampaper
+		WHERE id=#{0};
+	</select> 
+	<select id="queryExampapersByLessonId" parameterType="Long" resultMap="myInfo">
+		SELECT id,published_time,last_time,lesson_id,sublesson_id
+		FROM exampaper
+		WHERE lesson_id=#{0};
+	</select> 
+	<select id="queryExampapersBySublessonId" parameterType="Long" resultMap="myInfo">
+		SELECT id,published_time,last_time,lesson_id,sublesson_id
+		FROM exampaper
+		WHERE sublesson_id=#{0};
+	</select> 
+	<select id="isExistent"  parameterType="Long" resultType="Integer">
+		select COUNT(*) as count from exampaper where id=#{id}
+	</select>
+	<resultMap type="Exampaper" id="myInfo">
+		<id column="id" property="id" />
+		<result column="published_time" property="publishedTime" />
+		<result column="last_time" property="lastTime"/>
+		<result column="lesson_id" property="lessonId"/>
+		<result column="sublesson_id" property="sublessonId"/>
+	</resultMap>
+	<select id="count" resultType="Long">
+		select count(*) as count from Exampaper
+	</select>
+</mapper>

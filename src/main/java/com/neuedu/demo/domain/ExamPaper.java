@@ -4,7 +4,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ExamPaper {
+public class Exampaper {
 	private long id;
 	private long lessonId;
 	private long sublessonId;
@@ -12,7 +12,7 @@ public class ExamPaper {
 	private String lastTime;
 	private Score score;
 	private List<Question> questions;
-	public ExamPaper(long id, long lessonId, long sublessonId, String publishedTime, String lastTime) {
+	public Exampaper(long id, String publishedTime, String lastTime,long lessonId, long sublessonId ) {
 		super();
 		this.id = id;
 		this.lessonId = lessonId;

@@ -86,10 +86,4 @@ public class ActivityControllerImpl implements ActivityController {
 		}
 		return activities;
 	}
-
-
-	
-
-
-	
 }

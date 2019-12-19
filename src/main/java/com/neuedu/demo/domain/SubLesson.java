@@ -8,7 +8,7 @@ public class SubLesson {
 	private long lessonId;
 	private String name;
 	private String pptUrl;
-	private List<ExamPaper> exampapers=new ArrayList<ExamPaper>();
+	private List<Exampaper> exampapers=new ArrayList<Exampaper>();
 	
 	public SubLesson(long id, long lessonId, String name, String pptUrl) {
 		super();
@@ -30,7 +30,7 @@ public class SubLesson {
 		return name;
 	}
 
-	public List<ExamPaper> getExampapers() {
+	public List<Exampaper> getExampapers() {
 		return exampapers;
 	}
 	
@@ -38,13 +38,13 @@ public class SubLesson {
 		return pptUrl;
 	}
 
-	public void addExamPaper(ExamPaper paper){
+	public void addExamPaper(Exampaper paper){
 		this.exampapers.add(paper);
 	}
 	
-	public ExamPaper getLastExamPaper(){
+	public Exampaper getLastExamPaper(){
 		long lastTime=Long.parseLong(this.exampapers.get(0).getPublishedTime());
-		ExamPaper paper=this.exampapers.get(0);
+		Exampaper paper=this.exampapers.get(0);
 		for(int i=0;i<this.exampapers.size();i++){
 			long thisTime=Long.parseLong(this.exampapers.get(i).getPublishedTime());
 			if (thisTime>lastTime){

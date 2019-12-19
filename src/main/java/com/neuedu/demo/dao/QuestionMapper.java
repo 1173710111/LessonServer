@@ -11,8 +11,8 @@ public interface QuestionMapper {
 	public long insertQuestion(Question question);
 	public void deleteQuestion(Long id);
 	public void updateQuestion(Question question);
-	public Question queryQuestionById(Long id);
+	public Question queryQuestionInfoById(Long id);
 	public Long count();
 	public Integer isExistent(Long id);
-	public List<Question> queryActivitiesByLessonId(Long id);
+	public List<Question> queryQuestionsByExampaperId(Long id);
 }

@@ -6,7 +6,7 @@ import java.util.List;
 public class UserContained {
 	private List<Message> messages=new ArrayList<Message>();
 	private List<Lesson> lessons=new ArrayList<Lesson>();
-	private List<PPT> ppts=new ArrayList<PPT>();
+	private List<String> ppts=new ArrayList<String>();
 	private List<Activity> activities=new ArrayList<Activity>();
 	private List<Discussion> discussions=new ArrayList<Discussion>();
 	public UserContained() {
@@ -23,10 +23,10 @@ public class UserContained {
 	public void addLesson(Lesson lesson) {
 		this.lessons.add(lesson);
 	}
-	public List<PPT> getPpts() {
+	public List<String> getPpts() {
 		return ppts;
 	}
-	public void addPPT(PPT ppt) {
+	public void addPPT(String ppt) {
 		this.ppts.add(ppt);
 	}
 	public List<Activity> getActivities() {

@@ -17,8 +17,8 @@ public class TeacherServiceImpl implements TeacherService {
 	}
 
 	@Override
-	public int insertTeacher(UserInfo teacher) {
-		int i = mapper.insertTeacher(teacher);
+	public long insertTeacher(UserInfo teacher) {
+		long i = mapper.insertTeacher(teacher);
 		session.commit();
 		return i;
 	}

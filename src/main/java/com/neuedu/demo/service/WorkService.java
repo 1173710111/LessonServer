@@ -11,7 +11,7 @@ public interface WorkService {
 		WorkService service=new WorkServiceImpl(session);
 		return service;
 	}
-	public int insertWork(StudentWork work);
+	public long insertWork(StudentWork work);
 	public void deleteWork(Long id);
 	public void updateWork(StudentWork work);
 	public StudentWork queryWorkInfoById(Long id);

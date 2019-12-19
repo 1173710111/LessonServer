@@ -7,6 +7,7 @@ import org.apache.ibatis.session.SqlSession;
 
 import com.neuedu.demo.controller.LessonController;
 import com.neuedu.demo.controller.LessonMemberController;
+import com.neuedu.demo.tool.NewSession;
 
 public class Question {
 	private long id;

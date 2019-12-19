@@ -20,8 +20,8 @@ public class SubLessonServiceImpl implements SubLessonService {
 	}
 
 	@Override
-	public int insertSubLesson(SubLesson sublesson) {
-		int i = mapper.insertSubLesson(sublesson);
+	public long insertSubLesson(SubLesson sublesson) {
+		long i = mapper.insertSubLesson(sublesson);
 		session.commit();
 		return i;
 	}
@@ -46,7 +46,7 @@ public class SubLessonServiceImpl implements SubLessonService {
 	public SubLesson querySubLessonById(Long id) {
 		SubLesson sublesson=null;
 		if (mapper.isExistent(id)==0){
-			sublesson=new SubLesson((long)0,(long)0,null);
+			sublesson=new SubLesson((long)0,(long)0,null,null);
 		}else{
 			sublesson=mapper.querySubLessonById(id);
 		}

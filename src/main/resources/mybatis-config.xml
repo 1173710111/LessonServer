@@ -12,6 +12,7 @@
   	<typeAlias alias="Activity" type="com.neuedu.demo.domain.Activity" />
   	<typeAlias alias="ActivityFile" type="com.neuedu.demo.domain.ActivityFile" />
   	<typeAlias alias="StudentWork" type="com.neuedu.demo.domain.StudentWork" />
+  	<typeAlias alias="Quesion" type="com.neuedu.demo.domain.Question" />
   	
   </typeAliases>
   <environments default="development">
@@ -36,5 +37,6 @@
     <mapper resource="mapper/ActivityFileMapper.xml"/>
     <mapper resource="mapper/WorkMapper.xml"/>
     <mapper resource="mapper/WorkMemberMapper.xml"/>
+    <mapper resource="mapper/QuestionMapper.xml"/>
   </mappers>
 </configuration>

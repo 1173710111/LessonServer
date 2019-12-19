@@ -20,8 +20,8 @@ public class ActivityServiceImpl implements ActivityService {
 	}
 
 	@Override
-	public int insertActivity(Activity Activity) {
-		int i = mapper.insertActivity(Activity);
+	public long insertActivity(Activity Activity) {
+		long i = mapper.insertActivity(Activity);
 		session.commit();
 		return i;
 	}

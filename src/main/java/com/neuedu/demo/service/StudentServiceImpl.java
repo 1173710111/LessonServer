@@ -20,8 +20,8 @@ public class StudentServiceImpl implements StudentService {
     }
   
 	@Override
-	public int insertStudent(UserInfo student) {
-		int i = mapper.insertStudent(student);
+	public long insertStudent(UserInfo student) {
+		long i = mapper.insertStudent(student);
 		session.commit();
 		return i;
 	}

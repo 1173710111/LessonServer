@@ -8,7 +8,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import com.neuedu.demo.domain.ActivityFile;
-import com.neuedu.demo.domain.NewSession;
+import com.neuedu.demo.tool.NewSession;
 
 
 public class ActivityFileControllerTest {

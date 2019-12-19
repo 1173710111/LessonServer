@@ -8,7 +8,7 @@ import com.neuedu.demo.domain.StudentWork;
 
 @Mapper
 public interface WorkMapper {
-	public int insertWork(StudentWork work);
+	public long insertWork(StudentWork work);
 	public void deleteWork(Long id);
 	public void updateWork(StudentWork work);
 	public StudentWork queryWorkInfoById(Long id);

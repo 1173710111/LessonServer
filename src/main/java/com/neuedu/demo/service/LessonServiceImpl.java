@@ -17,8 +17,8 @@ public class LessonServiceImpl implements LessonService {
     }
 	  
 	@Override
-	public int insertLesson(LessonInfo lesson) {
-		int i = mapper.insertLesson(lesson);
+	public long insertLesson(LessonInfo lesson) {
+		long i = mapper.insertLesson(lesson);
 		session.commit();
 		return i;
 	}

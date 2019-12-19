@@ -8,8 +8,8 @@ import com.neuedu.demo.domain.ActivityFile;
 
 @Mapper
 public interface ActivityFileMapper {
-	public int insertUpFile(ActivityFile file);
-	public int insertDownFile(ActivityFile file);
+	public long insertUpFile(ActivityFile file);
+	public long insertDownFile(ActivityFile file);
 	
 	public void deleteActivityFile(Long id);
 	

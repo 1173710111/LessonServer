@@ -11,7 +11,7 @@ public interface SubLessonService {
 		SubLessonServiceImpl service=new SubLessonServiceImpl(session);
 		return service;
 	}
-	public int insertSubLesson(SubLesson sublesson);
+	public long insertSubLesson(SubLesson sublesson);
 	public void deleteSubLesson(Long id);
 	public void updateSubLesson(SubLesson sublesson);
 	public SubLesson querySubLessonById(Long id);

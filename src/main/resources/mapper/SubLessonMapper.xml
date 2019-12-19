@@ -5,8 +5,8 @@
 <mapper namespace="com.neuedu.demo.dao.SubLessonMapper">
 	<insert id="insertSubLesson" parameterType="SubLesson" useGeneratedKeys="true" keyProperty="id" keyColumn="id">
 		INSERT INTO
-		sublesson(name,lesson_id) 
-		VALUES(#{name},#{lessonId});
+		sublesson(name,lesson_id,ppt_url) 
+		VALUES(#{name},#{lessonId},#{pptUrl});
 	</insert>
 	<delete id="deleteSubLesson" parameterType="Long">
 		DELETE FROM sublesson
@@ -16,16 +16,17 @@
 		UPDATE sublesson
 		SET
 		name=#{name},
-		lesson_id=#{lessonId}
+		lesson_id=#{lessonId},
+		ppt_url=#{pptUrl}
 		WHERE id=#{id};
 	</update>
 	<select id="querySubLessonById" parameterType="Long" resultType="SubLesson">
-		SELECT id id,lesson_id lessonId,name name
+		SELECT id id,lesson_id lessonId,name name,ppt_url pptUrl
 		FROM sublesson
 		WHERE id=#{0};
 	</select> 
 	<select id="querySubLessonsByLessonId" parameterType="Long" resultType="SubLesson">
-		SELECT id id,lesson_id lessonId,name name
+		SELECT id id,lesson_id lessonId,name name,ppt_url pptUrl
 		FROM sublesson
 		WHERE lesson_id=#{0};
 	</select> 

@@ -12,9 +12,9 @@ public interface SubLessonController {
 		return controller;
 	}
 	
-	public String insertSubLesson(String name,Long lessonId);
+	public String insertSubLesson(String name,Long lessonId,String pptUrl);
 	public String deleteSubLesson(Long id);
-	public String updateSubLesson(Long id,String name,int lessonId);
+	public String updateSubLesson(Long id,String name,Long lessonId,String pptUrl);
 	public SubLesson querySubLessonInfoById(Long id);
 	public List<SubLesson> querySubLessonsByLessonId(Long lessonId);
 }

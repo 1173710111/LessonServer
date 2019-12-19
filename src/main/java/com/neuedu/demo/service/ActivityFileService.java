@@ -11,7 +11,7 @@ public interface ActivityFileService {
 		ActivityFileService service=new ActivityFileServiceImpl(session);
 		return service;
 	}
-	public int insertActivityFile(ActivityFile file);
+	public long insertActivityFile(ActivityFile file);
 	public void deleteActivityFile(Long id);
 	public void updateActivityFile(ActivityFile file);
 	public ActivityFile queryActivityFileById(Long id);

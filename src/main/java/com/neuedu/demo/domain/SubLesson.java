@@ -7,22 +7,15 @@ public class SubLesson {
 	private long id;
 	private long lessonId;
 	private String name;
+	private String pptUrl;
 	private List<ExamPaper> exampapers=new ArrayList<ExamPaper>();
-	private List<PPT> ppts=new ArrayList<PPT>();
-
-	public SubLesson(long id, long lessonId, String name) {
+	
+	public SubLesson(long id, long lessonId, String name, String pptUrl) {
 		super();
 		this.id = id;
 		this.lessonId = lessonId;
 		this.name = name;
-	}
-
-	public SubLesson(long id, long lessonId, String name, List<PPT> ppts) {
-		super();
-		this.id = id;
-		this.lessonId = lessonId;
-		this.name = name;
-		this.ppts = ppts;
+		this.pptUrl=pptUrl;
 	}
 
 	public long getId() {
@@ -40,11 +33,11 @@ public class SubLesson {
 	public List<ExamPaper> getExampapers() {
 		return exampapers;
 	}
-
-	public List<PPT> getPpts() {
-		return ppts;
-	}
 	
+	public String getPptUrl() {
+		return pptUrl;
+	}
+
 	public void addExamPaper(ExamPaper paper){
 		this.exampapers.add(paper);
 	}
@@ -64,7 +57,9 @@ public class SubLesson {
 
 	@Override
 	public String toString() {
-		return "SubLesson [id=" + id + ", lessonId=" + lessonId + ", name=" + name + "]";
+		return "SubLesson [id=" + id + ", lessonId=" + lessonId + ", name=" + name + ", pptUrl=" + pptUrl + "]";
 	}
+
+
 	
 }

@@ -8,7 +8,7 @@ import com.neuedu.demo.domain.Activity;
 
 @Mapper
 public interface ActivityMapper {
-	public int insertActivity(Activity Activityinfo);
+	public long insertActivity(Activity Activityinfo);
 	public void deleteActivity(Long id);
 	public void updateActivity(Activity Activityinfo);
 	public Activity queryActivityById(Long id);

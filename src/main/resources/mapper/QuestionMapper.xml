@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.neuedu.demo.dao.QuestionMapper">
+	<insert id="insertQuestion" parameterType="Question" useGeneratedKeys="true" keyProperty="id" keyColumn="id">
+		INSERT INTO
+		question(exampaper_id,introduction,options,answer) 
+		VALUES(#{exampaperId},#{introduction},#{options},#{answer});
+	</insert>
+	<delete id="deleteQuestion" parameterType="Long">
+		DELETE FROM question
+		WHERE id=#{id};
+	</delete>
+	<update id="updateQuestion" parameterType="Question">
+		UPDATE question
+		SET
+		exampaper_id=#{exampaperId},
+		introduction=#{introduction},
+		options=#{options},
+		answer=#{answer}
+		WHERE id=#{id};
+	</update>
+	<select id="queryQuestionInfoById" parameterType="Long" resultMap="myInfo">
+		SELECT id,exampaper_id,introduction,options,answer
+		FROM question
+		WHERE id=#{0};
+	</select> 
+	<select id="isExistent"  parameterType="Long" resultType="Integer">
+		select COUNT(*) as count from question where id=#{id}
+	</select>
+	<resultMap type="Question" id="myInfo">
+		<id column="id" property="id" />
+		<result column="exampaper_id" property="exampaperId" />
+		<result column="introduction" property="introduction"/>
+		<result column="options" property="options"/>
+		<result column="answer" property="answer"/>
+	</resultMap>
+	<select id="count" resultType="Long">
+		select count(*) as count from question
+	</select>
+	<select id="queryQiestionsByExampaperId"  parameterType="Long" resultMap="myInfo">
+		SELECT id,exampaper_id,introduction,options,answer
+		FROM question
+		WHERE exampaper_id=#{0};
+	</select>
+</mapper>

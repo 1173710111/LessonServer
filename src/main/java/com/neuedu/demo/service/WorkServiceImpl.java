@@ -18,8 +18,8 @@ public class WorkServiceImpl implements WorkService {
 	}
 
 	@Override
-	public int insertWork(StudentWork work) {
-		int i=mapper.insertWork(work);
+	public long insertWork(StudentWork work) {
+		long i=mapper.insertWork(work);
 		session.commit();
 		return i;
 	}

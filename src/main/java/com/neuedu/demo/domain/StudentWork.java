@@ -5,6 +5,7 @@ import java.util.List;
 import org.apache.ibatis.session.SqlSession;
 
 import com.neuedu.demo.controller.ActivityController;
+import com.neuedu.demo.tool.NewSession;
 
 public class StudentWork {
 	private long id;

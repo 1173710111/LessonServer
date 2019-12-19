@@ -8,6 +8,7 @@ import org.apache.ibatis.session.SqlSession;
 import com.neuedu.demo.controller.ActivityController;
 import com.neuedu.demo.controller.DiscussionController;
 import com.neuedu.demo.controller.ReplyController;
+import com.neuedu.demo.tool.NewSession;
 
 public class Message {
 	private long id;

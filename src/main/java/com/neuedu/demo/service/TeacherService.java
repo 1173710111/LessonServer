@@ -10,7 +10,7 @@ public interface TeacherService {
 		return service;
 	}
 	
-	public int insertTeacher(UserInfo teacher);
+	public long insertTeacher(UserInfo teacher);
 	public void deleteTeacher(Long id);
 	public void updateTeacher(UserInfo teacher);
 	public UserInfo queryTeacherById(Long id);

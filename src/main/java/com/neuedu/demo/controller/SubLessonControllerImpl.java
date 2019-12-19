@@ -18,8 +18,8 @@ public class SubLessonControllerImpl implements SubLessonController {
 	}
 
 	@Override
-	public String insertSubLesson(String name, Long lessonId) {
-		SubLesson sublesson=new SubLesson((long)0,lessonId,name);
+	public String insertSubLesson(String name, Long lessonId,String pptUrl) {
+		SubLesson sublesson=new SubLesson((long)0,lessonId,name,pptUrl);
 		Long cnt=service.count();
 		service.insertSubLesson(sublesson);
 		Long cnt_after=service.count();
@@ -46,8 +46,8 @@ public class SubLessonControllerImpl implements SubLessonController {
 	}
 
 	@Override
-	public String updateSubLesson(Long id, String name, int lessonId) {
-		SubLesson sublesson=new SubLesson(id,lessonId,name);
+	public String updateSubLesson(Long id, String name, Long lessonId,String pptUrl) {
+		SubLesson sublesson=new SubLesson(id,lessonId,name,pptUrl);
 		service.updateSubLesson(sublesson);
 		SubLesson sublessonAfter=service.querySubLessonById(id);
 		if (sublessonAfter.toString().equals(sublesson.toString())){

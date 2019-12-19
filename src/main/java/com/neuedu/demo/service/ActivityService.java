@@ -11,7 +11,7 @@ public interface ActivityService {
 		ActivityServiceImpl service=new ActivityServiceImpl(session);
 		return service;
 	}
-	public int insertActivity(Activity Activity);
+	public long insertActivity(Activity Activity);
 	public void deleteActivity(Long id);
 	public void updateActivity(Activity Activity);
 	public Activity queryActivityById(Long id);

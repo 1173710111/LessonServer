@@ -9,7 +9,7 @@ public interface LessonService {
 		LessonServiceImpl service=new LessonServiceImpl(session);
 		return service;
 	}
-	public int insertLesson(LessonInfo Lesson);
+	public long insertLesson(LessonInfo Lesson);
 	public void deleteLesson(Long id);
 	public void updateLesson(LessonInfo Lesson);
 	public LessonInfo queryLessonById(Long id);

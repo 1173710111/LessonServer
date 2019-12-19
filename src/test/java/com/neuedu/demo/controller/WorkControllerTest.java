@@ -6,8 +6,9 @@ import org.apache.ibatis.session.SqlSession;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import com.neuedu.demo.domain.NewSession;
+
 import com.neuedu.demo.domain.StudentWork;
+import com.neuedu.demo.tool.NewSession;
 
 
 public class WorkControllerTest {

@@ -1,4 +1,4 @@
-package com.neuedu.demo.domain;
+package com.neuedu.demo.tool;
 
 import java.io.IOException;
 import java.io.InputStream;

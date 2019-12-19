@@ -10,7 +10,7 @@ public interface StudentService {
 		return service;
 	}
 	
-	public int insertStudent(UserInfo student);
+	public long insertStudent(UserInfo student);
 	public void deleteStudent(Long id);
 	public void updateStudent(UserInfo student);
 	public UserInfo queryStudentById(Long id);

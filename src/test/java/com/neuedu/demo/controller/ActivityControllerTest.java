@@ -9,8 +9,8 @@ import org.junit.Before;
 import org.junit.Test;
 
 import com.neuedu.demo.domain.Activity;
-import com.neuedu.demo.domain.NewSession;
 import com.neuedu.demo.tool.FormatString;
+import com.neuedu.demo.tool.NewSession;
 
 
 public class ActivityControllerTest {

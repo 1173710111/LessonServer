@@ -8,7 +8,7 @@ import com.neuedu.demo.domain.SubLesson;
 
 @Mapper
 public interface SubLessonMapper {
-	public int insertSubLesson(SubLesson sublesson);
+	public long insertSubLesson(SubLesson sublesson);
 	public void deleteSubLesson(Long id);
 	public void updateSubLesson(SubLesson sublesson);
 	public SubLesson querySubLessonById(Long id);

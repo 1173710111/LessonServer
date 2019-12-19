@@ -20,8 +20,8 @@ public class ActivityFileServiceImpl implements ActivityFileService {
 	}
 
 	@Override
-	public int insertActivityFile(ActivityFile file) {
-		int i=0;
+	public long insertActivityFile(ActivityFile file) {
+		long i=0;
 		if (file.getType().equals("upFile")){
 			i = mapper.insertUpFile(file);
 		}else{

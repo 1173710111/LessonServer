@@ -8,7 +8,6 @@ import org.springframework.stereotype.Controller;
 
 import com.neuedu.demo.domain.Activity;
 import com.neuedu.demo.service.ActivityService;
-import com.neuedu.demo.service.LessonService;
 @Controller
 public class ActivityControllerImpl implements ActivityController {
 	private SqlSession session;

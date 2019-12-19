@@ -3,10 +3,6 @@ package com.neuedu.demo.domain;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.ibatis.session.SqlSession;
-
-import com.neuedu.demo.controller.ActivityController;
-import com.neuedu.demo.controller.LessonController;
 
 public class Activity {
 	private long id;

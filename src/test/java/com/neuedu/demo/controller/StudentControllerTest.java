@@ -7,8 +7,11 @@ import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+
+import com.neuedu.demo.domain.NewSession;
 
 
 public class StudentControllerTest {
@@ -20,38 +23,32 @@ public class StudentControllerTest {
 	
 	@Before
 	public void init(){
-		String resource = "mybatis-config.xml";
-    	InputStream inputStream = null;
-    	SqlSessionFactory sqlSessionFactory=null;
-		try {
-			inputStream = Resources.getResourceAsStream(resource);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		sqlSessionFactory= new SqlSessionFactoryBuilder().build(inputStream);
-		session = sqlSessionFactory.openSession();
+		session = NewSession.getSession();
 		this.controller=StudentController.empty(session);
 	}
 	
 	@Test
 	public void insertTest(){
 		String result=controller.insertStudent(username, password, image);
-		System.out.print(result);
+		System.out.println(result);
 	}
 	@Test
 	public void deleteTest(){
 		String result=controller.deleteStudent((long) 3);
-		System.out.print(result);
+		System.out.println(result);
 	}
 	@Test
 	public void queryTest(){
 		String result=controller.queryStudentInfoById((long) 4).toString();
-		System.out.print(result);
+		System.out.println(result);
 	}
 	@Test
 	public void updateTest(){
 		String result=controller.updateStudent((long) 2,"拉普兰德做得到吗", "654321", image);
-		System.out.print(result);
+		System.out.println(result);
+	}
+	@After
+	public void finish(){
+		session.close();
 	}
 }

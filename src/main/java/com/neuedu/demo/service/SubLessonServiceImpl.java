@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.neuedu.demo.dao.SubLessonMapper;
-import com.neuedu.demo.domain.LessonInfo;
 import com.neuedu.demo.domain.SubLesson;
 @Service
 public class SubLessonServiceImpl implements SubLessonService {

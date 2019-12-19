@@ -9,7 +9,6 @@ import org.springframework.stereotype.Service;
 
 import com.neuedu.demo.dao.ActivityMapper;
 import com.neuedu.demo.domain.Activity;
-import com.neuedu.demo.domain.Activity;
 @Service
 public class ActivityServiceImpl implements ActivityService {
 	private SqlSession session;

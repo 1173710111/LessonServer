@@ -3,24 +3,24 @@
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.neuedu.demo.dao.WorkMapper">
-	<insert id="insertWork" parameterType="Long">
+	<insert id="insertWork" parameterType="StudentWork" useGeneratedKeys="true" keyProperty="id" keyColumn="id">
 		INSERT INTO
 		work(activity_id) 
-		VALUES(#{id});
+		VALUES(#{activityId})
 	</insert>
 	<delete id="deleteWork" parameterType="Long">
 		DELETE FROM work
-		WHERE activity_id=#{id};
+		WHERE id=#{id};
 	</delete>
-	<update id="updateWork" parameterType="PairLongs">
+	<update id="updateWork" parameterType="StudentWork">
 		UPDATE work
-		SET activity_id=#{value2}
-		WHERE id=#{value1};
+		SET activity_id=#{activityId}
+		WHERE id=#{id};
 	</update>
 	<select id="queryWorkInfoById" parameterType="Long" resultType="StudentWork">
 		SELECT id,activity_id
 		FROM work
-		WHERE student_id=#{0};
+		WHERE id=#{0};
 	</select> 
 	<select id="queryWorksByActivityId" parameterType="Long" resultType="StudentWork">
 		SELECT id id,activity_id activityId

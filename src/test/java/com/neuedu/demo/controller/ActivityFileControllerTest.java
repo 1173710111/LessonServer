@@ -1,21 +1,14 @@
 package com.neuedu.demo.controller;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.text.SimpleDateFormat;
 import java.util.List;
 
-import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
-import org.apache.ibatis.session.SqlSessionFactory;
-import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.neuedu.demo.domain.Activity;
 import com.neuedu.demo.domain.ActivityFile;
 import com.neuedu.demo.domain.NewSession;
-import com.neuedu.demo.tool.FormatString;
 
 
 public class ActivityFileControllerTest {
@@ -30,22 +23,22 @@ public class ActivityFileControllerTest {
 	@Test
 	public void insertTest1(){
 		String result1=controller.insertActivityFile("实验指导书",this.url,"downFile",(long)1,null);
-		System.out.print(result1);
+		System.out.println(result1);
 	}
 	@Test
 	public void insertTest2(){
 		String result1=controller.insertActivityFile("实验指导书",this.url,"downFile",(long)1,null);
-		System.out.print(result1);
+		System.out.println(result1);
 	}
 	@Test
 	public void deleteTest(){
 		String result=controller.deleteActivityFile((long) 5);
-		System.out.print(result);
+		System.out.println(result);
 	}
 	@Test
 	public void queryTest(){
 		String result=controller.queryActivityFileById((long) 1).toString();
-		System.out.print(result);
+		System.out.println(result);
 	}
 	@Test 
 	public void queryListActivityTest(){
@@ -60,6 +53,10 @@ public class ActivityFileControllerTest {
 	@Test
 	public void updateTest(){
 		String result=controller.updateActivityFile((long)2,"实验要求大纲",this.url,"downFile",(long)1,null);
-		System.out.print(result);
+		System.out.println(result);
+	}
+	@After
+	public void finish(){
+		session.close();
 	}
 }

@@ -5,7 +5,6 @@ import java.util.List;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.neuedu.demo.service.LessonService;
 import com.neuedu.demo.service.LessonTeacherService;
 import com.neuedu.demo.tool.PairLongs;
 

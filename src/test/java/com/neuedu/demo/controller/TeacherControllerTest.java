@@ -1,6 +1,7 @@
 package com.neuedu.demo.controller;
 
 import org.apache.ibatis.session.SqlSession;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -23,21 +24,25 @@ public class TeacherControllerTest {
 	@Test
 	public void insertTest(){
 		String result=controller.insertTeacher(username, password, image);
-		System.out.print(result);
+		System.out.println(result);
 	}
 	@Test
 	public void deleteTest(){
 		String result=controller.deleteTeacher((long) 1);
-		System.out.print(result);
+		System.out.println(result);
 	}
 	@Test
 	public void queryTest(){
 		String result=controller.queryTeacherInfoById((long) 5).toString();
-		System.out.print(result);
+		System.out.println(result);
 	}
 	@Test
 	public void updateTest(){
 		String result=controller.updateTeacher((long) 2,"yyy", "654321", image);
-		System.out.print(result);
+		System.out.println(result);
+	}
+	@After
+	public void finish(){
+		session.close();
 	}
 }

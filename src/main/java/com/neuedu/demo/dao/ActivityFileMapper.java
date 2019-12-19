@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 
-import com.neuedu.demo.domain.Activity;
 import com.neuedu.demo.domain.ActivityFile;
 
 @Mapper

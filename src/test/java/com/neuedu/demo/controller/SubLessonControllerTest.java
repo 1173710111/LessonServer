@@ -1,12 +1,7 @@
 package com.neuedu.demo.controller;
 
-import java.io.IOException;
-import java.io.InputStream;
-
-import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
-import org.apache.ibatis.session.SqlSessionFactory;
-import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -34,12 +29,12 @@ public class SubLessonControllerTest {
 	@Test
 	public void deleteTest(){
 		String result=controller.deleteSubLesson((long) 3);
-		System.out.print(result);
+		System.out.println(result);
 	}
 	@Test
 	public void queryTest(){
 		String result=controller.querySubLessonInfoById((long) 1).toString();
-		System.out.print(result);
+		System.out.println(result);
 	}
 	@Test
 	public void queryListTest(){
@@ -49,6 +44,10 @@ public class SubLessonControllerTest {
 	@Test
 	public void updateTest(){
 		String result=controller.updateSubLesson((long)4,this.name,1);
-		System.out.print(result);
+		System.out.println(result);
+	}
+	@After
+	public void finish(){
+		session.close();
 	}
 }

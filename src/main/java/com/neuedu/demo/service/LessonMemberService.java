@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
 
-import com.neuedu.demo.domain.LessonInfo;
 import com.neuedu.demo.tool.PairLongs;
 
 public interface LessonMemberService {

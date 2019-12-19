@@ -58,4 +58,11 @@ public class StudentWork {
 			this.upFiles.remove(fileurl);
 		}
 	}
+
+	@Override
+	public String toString() {
+		return "StudentWork [id=" + id + ", activityId=" + activityId + ", teamMembers=" + teamMembers + ", upFiles="
+				+ upFiles + ", teamVolume=" + teamVolume + "]";
+	}
+	
 }

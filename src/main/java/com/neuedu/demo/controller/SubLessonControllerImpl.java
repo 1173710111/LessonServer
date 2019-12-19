@@ -7,9 +7,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
-import com.neuedu.demo.domain.LessonInfo;
 import com.neuedu.demo.domain.SubLesson;
-import com.neuedu.demo.service.LessonService;
 import com.neuedu.demo.service.SubLessonService;
 @Controller
 public class SubLessonControllerImpl implements SubLessonController {

@@ -2,7 +2,6 @@ package com.neuedu.demo.controller;
 
 import org.apache.ibatis.session.SqlSession;
 
-import com.neuedu.demo.domain.Lesson;
 import com.neuedu.demo.domain.LessonInfo;
 
 public interface LessonController {

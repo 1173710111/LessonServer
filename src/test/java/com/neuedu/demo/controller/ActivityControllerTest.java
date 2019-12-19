@@ -1,14 +1,10 @@
 package com.neuedu.demo.controller;
 
-import java.io.IOException;
-import java.io.InputStream;
 import java.text.SimpleDateFormat;
 import java.util.List;
 
-import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
-import org.apache.ibatis.session.SqlSessionFactory;
-import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -39,18 +35,19 @@ public class ActivityControllerTest {
 	@Test
 	public void insertTest(){
 		String result1=controller.insertActivity((long)2,"完成实验三", "实验课上验收", ""+this.timeStart,""+this.timeEnd, 3);
-		System.out.print(result1);
-		
+		System.out.println(result1);
+		String result2=controller.insertActivity((long)10,"完成实验三", "实验课上验收", ""+this.timeStart,""+this.timeEnd, 3);
+		System.out.println(result2);
 	}
 	@Test
 	public void deleteTest(){
 		String result=controller.deleteActivity((long) 3);
-		System.out.print(result);
+		System.out.println(result);
 	}
 	@Test
 	public void queryTest(){
 		String result=controller.queryActivityInfoById((long) 1).toString();
-		System.out.print(result);
+		System.out.println(result);
 	}
 	@Test 
 	public void queryListTest(){
@@ -60,6 +57,10 @@ public class ActivityControllerTest {
 	@Test
 	public void updateTest(){
 		String result=controller.updateActivity((long)4,(long)1,"完成实验二", "下周日之前提交实验报告", ""+this.timeStart,""+this.timeEnd, 3);
-		System.out.print(result);
+		System.out.println(result);
+	}
+	@After
+	public void finish(){
+		session.close();
 	}
 }

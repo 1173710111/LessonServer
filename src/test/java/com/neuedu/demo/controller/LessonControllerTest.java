@@ -1,12 +1,7 @@
 package com.neuedu.demo.controller;
 
-import java.io.IOException;
-import java.io.InputStream;
-
-import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
-import org.apache.ibatis.session.SqlSessionFactory;
-import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -40,21 +35,25 @@ public class LessonControllerTest {
 	@Test
 	public void insertTest(){
 		String result=controller.insertLesson(this.name,introduction,timeStart,timeEnd,password,image);
-		System.out.print(result);
+		System.out.println(result);
 	}
 	@Test
 	public void deleteTest(){
 		String result=controller.deleteLesson((long) 3);
-		System.out.print(result);
+		System.out.println(result);
 	}
 	@Test
 	public void queryTest(){
 		String result=controller.queryLessonInfoById((long) 1).toString();
-		System.out.print(result);
+		System.out.println(result);
 	}
 	@Test
 	public void updateTest(){
 		String result=controller.updateLesson((long)4,"计算机网络","应用层-传输层-网络层-数据链路层-物理层",timeStart,timeEnd,"date",image);
-		System.out.print(result);
+		System.out.println(result);
+	}
+	@After
+	public void finish(){
+		session.close();
 	}
 }

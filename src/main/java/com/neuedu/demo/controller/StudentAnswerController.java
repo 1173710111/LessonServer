@@ -12,9 +12,10 @@ public interface StudentAnswerController {
 		return controller;
 	}
 	
-	public String insertStudentAnswer(Long questionId,Long StudentId,String answer,int finishedState,int starState);
+	public String insertStudentAnswer(Long questionId,Long studentId,String answer,int finishedState,int starState);
 	public String deleteStudentAnswer(Long id);
-	public String updateStudentAnswer(Long id,Long questionId,Long StudentId,String answer,int finishedState,int starState);
+	public String updateStudentAnswer(Long id,Long questionId,Long studentId,String answer,int finishedState,int starState);
 	public StudentAnswer queryStudentAnswerInfoById(Long id);
-	public List<StudentAnswer> queryStudentAnswersByStudentId(Long studentID);
+	public List<StudentAnswer> queryStudentAnswersByStudentId(Long studentId);
+	public List<StudentAnswer> queryStudentAnswersByQuestionId(Long questionId);
 }

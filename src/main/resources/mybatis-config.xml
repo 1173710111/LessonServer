@@ -14,6 +14,7 @@
   	<typeAlias alias="StudentWork" type="com.neuedu.demo.domain.StudentWork" />
   	<typeAlias alias="Question" type="com.neuedu.demo.domain.Question" />
   	<typeAlias alias="Exampaper" type="com.neuedu.demo.domain.Exampaper" />
+  	<typeAlias alias="StudentAnswer" type="com.neuedu.demo.domain.StudentAnswer" />
   	
   </typeAliases>
   <environments default="development">
@@ -40,5 +41,6 @@
     <mapper resource="mapper/WorkMemberMapper.xml"/>
     <mapper resource="mapper/QuestionMapper.xml"/>
     <mapper resource="mapper/ExampaperMapper.xml"/>
+    <mapper resource="mapper/StudentAnswerMapper.xml"/>
   </mappers>
 </configuration>

@@ -60,7 +60,8 @@ public class SubLessonServiceImpl implements SubLessonService {
 
 	@Override
 	public List<SubLesson> querySubLessonsByLessonId(Long lessonId) {
-		if (mapper.querySubLessonsByLessonId(lessonId)==null||mapper.querySubLessonsByLessonId(lessonId).size()==0){
+		List<SubLesson> sublessons=mapper.querySubLessonsByLessonId(lessonId);
+		if (sublessons==null||sublessons.size()==0){
 			return new ArrayList<SubLesson>();
 		}else{
 			return mapper.querySubLessonsByLessonId(lessonId);

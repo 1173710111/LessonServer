@@ -69,6 +69,4 @@ public class SubLessonControllerImpl implements SubLessonController {
 		return sublessons;
 	}
 
-	
-
 }

@@ -18,6 +18,8 @@
   	<typeAlias alias="Score" type="com.neuedu.demo.domain.Score" />
   	<typeAlias alias="Discussion" type="com.neuedu.demo.domain.Discussion" />
   	<typeAlias alias="Message" type="com.neuedu.demo.domain.Message" />
+  	<typeAlias alias="Reply" type="com.neuedu.demo.domain.Reply" />
+  	<typeAlias alias="Pair" type="com.neuedu.demo.tool.Pair" />
   	
   </typeAliases>
   <environments default="development">
@@ -48,5 +50,6 @@
     <mapper resource="mapper/ScoreMapper.xml"/>
     <mapper resource="mapper/DiscussionMapper.xml"/>
     <mapper resource="mapper/MessageMapper.xml"/>
+    <mapper resource="mapper/ReplyMapper.xml"/>
   </mappers>
 </configuration>

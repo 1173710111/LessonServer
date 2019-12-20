@@ -55,13 +55,9 @@ public class ScoreServiceImpl implements ScoreService {
 
 	@Override
 	public List<Score> queryScoresByExampaperId(Long id) {
-		List<Score> Score=null;
-		if (mapper.isExistent(id)==0){
-			Score=new ArrayList<Score>();
-		}else{
-			Score=mapper.queryScoresByExampaperId(id);
-		}
-		return Score;
+		List<Score> score=mapper.queryScoresByExampaperId(id);
+		if (score==null) score=new ArrayList<Score>();
+		return score;
 	}
 	
 	@Override
@@ -69,4 +65,3 @@ public class ScoreServiceImpl implements ScoreService {
 		return mapper.count();
 	}
 }
-

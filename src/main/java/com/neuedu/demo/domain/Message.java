@@ -192,7 +192,7 @@ public class Message {
 		Reply myReply=controller2.queryReplyInfoById(this.replyId);
 		content=content+myReply.getContent()+"”有一条新回复：\n";
 		Reply newReply=myReply.getReplies().get(myReply.getReplies().size()-1);
-		content=content+"@"+newReply.getUser().getMainInfo().getId()+"："+newReply.getContent();
+		content=content+"@"+newReply.getUserId()+"："+newReply.getContent();
 		return content;
 	}
 	
@@ -204,7 +204,7 @@ public class Message {
 		String disTitle=discussion.getTitle();
 		content=content+disTitle+"】中有一条新评论：\n";
 		Reply newReply=discussion.getReplies().get(discussion.getReplies().size()-1);
-		content=content+"@"+newReply.getUser().getMainInfo().getId()+"："+newReply.getContent();
+		content=content+"@"+newReply.getUserId()+"："+newReply.getContent();
 		return content;
 	}
 

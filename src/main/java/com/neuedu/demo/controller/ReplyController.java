@@ -12,10 +12,11 @@ public interface ReplyController {
 		return controller;
 	}
 	
-	public String insertReply(String userIdentity,Long userId,String userName,String time,String content,Long discussionId,Long upReplyId);
+	public String insertReply(String userIdentity,Long userId,String time,String content,Long discussionId,Long upReplyId);
 	public String deleteReply(Long id);
-	public String updateReply(Long id,String userIdentity,Long userId,String userName,String time,String content,Long discussionId,Long upReplyId);
+	public String updateReply(Long id,String userIdentity,Long userId,String time,String content,Long discussionId,Long upReplyId);
 	public Reply queryReplyInfoById(Long id);
-	public List<Reply> queryReplysByDiscussionId(Long discussionId); 
-	public List<Reply> queryReplysByUser(String identity,Long userId);
+	public List<Reply> queryRepliesByDiscussionId(Long discussionId); 
+	public List<Reply> queryRepliesByUser(String identity,Long userId);
+	public List<Reply> queryRepliesFollowed(Long id);
 }

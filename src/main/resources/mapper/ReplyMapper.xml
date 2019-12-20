@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0" 
+"http://www.mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.neuedu.demo.dao.ReplyMapper">
+	<insert id="insertReply" parameterType="Reply" useGeneratedKeys="true" keyProperty="id" keyColumn="id">
+		INSERT INTO
+		reply(user_identity,user_id,time,content,discussion_id,up_reply_id) 
+		VALUES(#{userIdentity},#{userId},#{time},#{content},#{discussionId},#{upReplyId});
+	</insert>
+	<delete id="deleteReply" parameterType="Long">
+		DELETE FROM reply
+		WHERE id=#{id};
+	</delete>
+	<update id="updateReply" parameterType="Reply">
+		UPDATE reply
+		SET
+		user_identity=#{userIdentity},
+		user_id=#{userId},
+		time=#{time},
+		content=#{content},
+		discussion_id=#{discussionId},
+		up_reply_id=#{upReplyId}
+		WHERE id=#{id};
+	</update>
+	<select id="queryReplyById" parameterType="Long" resultMap="myInfo">
+		SELECT id,user_identity,user_id,time,content,discussion_id,up_reply_id
+		FROM reply
+		WHERE id=#{0};
+	</select> 
+	<select id="queryRepliesByDiscussionId" parameterType="Long" resultMap="myInfo">
+		SELECT id,user_identity,user_id,time,content,discussion_id,up_reply_id
+		FROM reply
+		WHERE discussion_id=#{0};
+	</select> 
+		<select id="queryRepliesByUser" parameterType="Pair" resultMap="myInfo">
+		SELECT id,user_identity,user_id,time,content,discussion_id,up_reply_id
+		FROM reply
+		WHERE user_identity=#{value1} and user_id=#{value2};
+	</select> 
+	<select id="queryRepliesFollowed" parameterType="Long" resultMap="myInfo">
+		SELECT id,user_identity,user_id,time,content,discussion_id,up_reply_id
+		FROM reply
+		WHERE up_reply_id=#{0};
+	</select> 
+	<select id="isExistent"  parameterType="Long" resultType="Integer">
+		select COUNT(*) as count from reply where id=#{id}
+	</select>
+	<resultMap type="Reply" id="myInfo">
+		<id column="id" property="id" />
+		<result column="user_identity" property="userIdentity" />
+		<result column="user_id" property="userId"/>
+		<result column="time" property="time"/>
+		<result column="content" property="content"/>
+		<result column="discussion_id" property="discussionId"/>
+		<result column="up_reply_id" property="upReplyId"/>
+	</resultMap>
+	<select id="count" resultType="Long">
+		select count(*) as count from reply
+	</select>
+</mapper>

@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import com.neuedu.demo.dao.DiscussionMapper;
 import com.neuedu.demo.domain.Discussion;
+import com.neuedu.demo.domain.Question;
 @Service
 public class DiscussionServiceImpl implements DiscussionService {
 	private SqlSession session;
@@ -55,13 +56,11 @@ public class DiscussionServiceImpl implements DiscussionService {
 
 	@Override
 	public List<Discussion> queryDiscussionsByLessonId(Long id) {
-		List<Discussion> Discussion=null;
-		if (mapper.isExistent(id)==0){
-			Discussion=new ArrayList<Discussion>();
-		}else{
-			Discussion=mapper.queryDiscussionsByLessonId(id);
+		List<Discussion> discussions=mapper.queryDiscussionsByLessonId(id);
+		if (discussions==null||discussions.size()==0){
+			discussions=new ArrayList<Discussion>();
 		}
-		return Discussion;
+		return discussions;
 	}
 	
 	@Override

@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 
 import com.neuedu.demo.dao.MessageMapper;
 import com.neuedu.demo.domain.Message;
+import com.neuedu.demo.domain.Question;
 @Service
 public class MessageServiceImpl implements MessageService {
 	private SqlSession session;
@@ -60,26 +61,29 @@ public class MessageServiceImpl implements MessageService {
 
 	@Override
 	public List<Message> queryMessagesByLessonId(Long id) {
-		List<Message> message=null;
-		if (mapper.isExistent(id)==0){
-			message=new ArrayList<Message>();
+		List<Message> messages=mapper.queryMessagesByLessonId(id);;
+		if (messages==null||messages.size()==0){
+			messages=new ArrayList<Message>();
 		}else{
-			message=mapper.queryMessagesByLessonId(id);
-			for (Message m:message){
+			for (Message m:messages){
 				m.setSender();
 				m.makeContent();
 			}
 		}
-		return message;
+		return messages;
 	}
 	@Override
 	public List<Message> queryMessagesByType(String type) {
-		List<Message> message=mapper.queryMessagesByType(type);
-		for (Message m:message){
-			m.setSender();
-			m.makeContent();
+		List<Message> messages=mapper.queryMessagesByType(type);
+		if (messages==null||messages.size()==0){
+			messages=new ArrayList<Message>();
+		}else{
+			for (Message m:messages){
+				m.setSender();
+				m.makeContent();
+			}
 		}
-		return message;
+		return messages;
 	}
 	
 	@Override

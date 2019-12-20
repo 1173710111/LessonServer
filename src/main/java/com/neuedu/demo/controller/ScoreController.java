@@ -1,5 +1,7 @@
 package com.neuedu.demo.controller;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 
 import com.neuedu.demo.domain.Score;
@@ -14,5 +16,5 @@ public interface ScoreController {
 	public String deleteScore(Long id);
 	public String updateScore(Long scoreId,Long numberAll,Long numberWrong,Long numberRight,Long numberUnfinished,Long exampaperId);
 	public Score queryScoreInfoById(Long id);
-	public Score queryScoreByExampaperId(Long id);
+	public List<Score> queryScoresByExampaperId(Long id);
 }

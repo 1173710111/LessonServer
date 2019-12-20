@@ -15,7 +15,7 @@
   	<typeAlias alias="Question" type="com.neuedu.demo.domain.Question" />
   	<typeAlias alias="Exampaper" type="com.neuedu.demo.domain.Exampaper" />
   	<typeAlias alias="StudentAnswer" type="com.neuedu.demo.domain.StudentAnswer" />
-  	
+  	<typeAlias alias="Score" type="com.neuedu.demo.domain.Score" />
   </typeAliases>
   <environments default="development">
     <environment id="development">
@@ -42,5 +42,6 @@
     <mapper resource="mapper/QuestionMapper.xml"/>
     <mapper resource="mapper/ExampaperMapper.xml"/>
     <mapper resource="mapper/StudentAnswerMapper.xml"/>
+    <mapper resource="mapper/ScoreMapper.xml"/>
   </mappers>
 </configuration>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.neuedu.demo.dao.ScoreMapper">
+	<insert id="insertScore" parameterType="Score" useGeneratedKeys="true" keyProperty="id" keyColumn="id">
+		INSERT INTO
+		score(number_all,number_wrong,number_right,number_unfinished,exampaper_id) 
+		VALUES(#{numberAll},#{numberWrong},#{numberRight},#{numberUnfinished},#{exampaperId});
+	</insert>
+	<delete id="deleteScore" parameterType="Long">
+		DELETE FROM score
+		WHERE id=#{id};
+	</delete>
+	<update id="updateScore" parameterType="Score">
+		UPDATE score
+		SET
+		number_all=#{numberAll},
+		number_wrong=#{numberWrong},
+		number_right=#{numberRight},
+		number_unfinished=#{numberUnfinished},
+		exampaper_id=#{exampaperId}
+		WHERE id=#{id};
+	</update>
+	<select id="queryScoreById" parameterType="Long" resultMap="myInfo">
+		SELECT id,number_all,number_wrong,number_right,number_unfinished,exampaper_id
+		FROM score
+		WHERE id=#{0};
+	</select> 
+	<select id="queryScoresByExampaperId" parameterType="Long" resultMap="myInfo">
+		SELECT id,number_all,number_wrong,number_right,number_unfinished,exampaper_id
+		FROM score
+		WHERE exampaper_id=#{0};
+	</select> 
+	<select id="isExistent"  parameterType="Long" resultType="Integer">
+		select COUNT(*) as count from score where id=#{id}
+	</select>
+	<resultMap type="Score" id="myInfo">
+		<id column="id" property="id" />
+		<result column="number_all" property="numberAll" />
+		<result column="number_wrong" property="numberWrong"/>
+		<result column="number_right" property="numberRight"/>
+		<result column="number_unfinished" property="numberUnfinished"/>
+		<result column="exampaper_id" property="exampaperId"/>
+	</resultMap>
+	<select id="count" resultType="Long">
+		select count(*) as count from score
+	</select>
+</mapper>

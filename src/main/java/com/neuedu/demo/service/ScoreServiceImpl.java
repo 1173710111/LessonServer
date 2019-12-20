@@ -69,3 +69,4 @@ public class ScoreServiceImpl implements ScoreService {
 		return mapper.count();
 	}
 }
+

@@ -1,20 +1,22 @@
 package com.neuedu.demo.controller;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 
-import com.mysql.cj.protocol.Message;
-
+import com.neuedu.demo.domain.Message;
 
 public interface MessageController {
 	public static MessageController empty(SqlSession session){
 		MessageController controller=new MessageControllerImpl(session);
 		return controller;
 	}
-	public String insertActivityToastMessage(String sender,String content,int lessonId,long activityId);
-	public String insertMemberDeleteMessage(String sender,String content,int lessonId);
-	public String insertTeamAddMessage(String sender,String content,int lessonId,long activityId,long workId);
-	public String insertDiscussionMessage(String type,String sender,String content,int lessonId,long discussionId,long replyId);
+	public String insertMessage(String type,String sender,String content,
+			Long lessonId,Long activityId,Long workId,Long discussionId,Long replyId);
 	public String deleteMessage(Long id);
-	public String updateMessage(Message message);
+	public String updateMessage(Long id,String type,String sender,String content,
+			Long lessonId,Long activityId,Long workId,Long discussionId,Long replyId);
 	public Message queryMessageInfoById(Long id);
+	public List<Message> queryMessagesBylessonId(Long id);
+	public List<Message> queryMessagesByType(String type);
 }

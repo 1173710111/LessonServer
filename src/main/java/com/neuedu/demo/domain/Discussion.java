@@ -5,17 +5,15 @@ import java.util.List;
 
 public class Discussion {
 	private long id;
-	private long num;
 	private long lessonId;
 	private String title;
 	private String publishedTime;
 	private List<Reply> replies;
 	private List<UserDiscussion> userDiscussions;
 	
-	public Discussion(long id, long num, long lessonId, String title,String publishedTime) {
+	public Discussion(long id, long lessonId, String title,String publishedTime) {
 		super();
 		this.id = id;
-		this.num = num;
 		this.lessonId = lessonId;
 		this.title = title;
 		this.publishedTime=publishedTime;
@@ -26,11 +24,6 @@ public class Discussion {
 	public long getId() {
 		return id;
 	}
-
-	public long getNum() {
-		return num;
-	}
-
 	public long getLessonId() {
 		return lessonId;
 	}
@@ -71,4 +64,11 @@ public class Discussion {
 			this.userDiscussions.add(userDiscussion);
 		}
 	}
+
+	@Override
+	public String toString() {
+		return "Discussion [id=" + id + ", lessonId=" + lessonId + ", title=" + title + ", publishedTime="
+				+ publishedTime + "]";
+	}
+	
 }

@@ -21,7 +21,6 @@ public class WorkMemberControllerTest {
 	@Test
 	public void insertTest(){
 		String result=controller.insertWorkMember((long)1,(long)2);
-		controller.insertWorkMember((long)1, (long)3);
 		controller.insertWorkMember((long)2, (long)2);
 		controller.insertWorkMember((long)3, (long)2);
 		controller.insertWorkMember((long)2, (long)4);

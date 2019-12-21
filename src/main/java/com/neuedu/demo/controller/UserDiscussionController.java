@@ -14,9 +14,10 @@ public interface UserDiscussionController {
 	}
 	
 	public String insertUserDiscussion(Long discussionId,String userIdentity,Long userId,int starState);
-	public String deleteUserDiscussion(String userIdentity,Long userId,Long discussionId);
-	public String updateUserDiscussionState(String userIdentity,Long userId,Long discussionId,int starState);
+	public String deleteUserDiscussion(Long id);
+	public String updateUserDiscussionState(Long id,int starState);
+	public UserDiscussion queryUserDiscussionById(Long id);
 	public List<UserDiscussion> queryUserDiscussions(String userIdentity,Long userId);
-	public List<UserDiscussion> queryDiscussionUsersByUserId(Long discussionId); 
+	public List<UserDiscussion> queryUserDiscussionsByDiscussionId(Long discussionId); 
 	
 }

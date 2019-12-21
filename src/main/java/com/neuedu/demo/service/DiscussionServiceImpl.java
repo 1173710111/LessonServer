@@ -9,7 +9,6 @@ import org.springframework.stereotype.Service;
 
 import com.neuedu.demo.dao.DiscussionMapper;
 import com.neuedu.demo.domain.Discussion;
-import com.neuedu.demo.domain.Question;
 @Service
 public class DiscussionServiceImpl implements DiscussionService {
 	private SqlSession session;

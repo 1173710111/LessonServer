@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.neuedu.demo.dao.UserMessageMapper">
+	<insert id="insertUserMessage" parameterType="Pair">
+		INSERT INTO
+		user_message(message_id,user_identity,user_id) 
+		VALUES(#{value1},#{value2.value1},#{value2.value2});
+	</insert>
+	<delete id="deleteUserMessage" parameterType="Pair">
+		DELETE FROM user_message
+		WHERE message_id=#{value1} and user_identity=#{value2.value1} and user_id=#{value2.value2}
+	</delete>
+	<select id="queryMessageUsersByMessageId" parameterType="Long" resultType="Pair">
+		SELECT user_identity value1,user_id value2
+		FROM user_message
+		WHERE message_id=#{0};
+	</select> 
+	<select id="queryUserMessages" parameterType="Pair" resultType="Long">
+		SELECT message_id,user_id,user_identity
+		FROM user_message
+		WHERE user_identity=#{value1} and user_id=#{value2}
+	</select> 
+	<select id="isExistent"  parameterType="Pair" resultType="Integer">
+		select COUNT(*) as count from user_message 
+		where message_id=#{value1} and user_identity=#{value2.value1} and user_id=#{value2.value2};
+	</select>
+	<select id="count" resultType="Long">
+		select COUNT(*) as count from user_message 
+	</select>
+</mapper>

@@ -9,7 +9,7 @@ public class UserDiscussion {
 	private int starState;
 	
 	
-	public UserDiscussion(long id, long discussionId, long userId, String userIdentity, int starState) {
+	public UserDiscussion(long id, String userIdentity,  long userId,long discussionId, int starState) {
 		super();
 		this.id = id;
 		this.discussionId = discussionId;
@@ -40,6 +40,12 @@ public class UserDiscussion {
 	
 	public void changeStarState(int state){
 		this.starState=state;
+	}
+
+	@Override
+	public String toString() {
+		return "UserDiscussion [id=" + id + ", discussionId=" + discussionId + ", userId=" + userId + ", userIdentity="
+				+ userIdentity + ", starState=" + starState + "]";
 	}
 	
 }

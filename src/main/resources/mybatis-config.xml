@@ -20,6 +20,7 @@
   	<typeAlias alias="Message" type="com.neuedu.demo.domain.Message" />
   	<typeAlias alias="Reply" type="com.neuedu.demo.domain.Reply" />
   	<typeAlias alias="Pair" type="com.neuedu.demo.tool.Pair" />
+  	<typeAlias alias="UserDiscussion" type="com.neuedu.demo.domain.UserDiscussion" />
   	
   </typeAliases>
   <environments default="development">
@@ -51,5 +52,7 @@
     <mapper resource="mapper/DiscussionMapper.xml"/>
     <mapper resource="mapper/MessageMapper.xml"/>
     <mapper resource="mapper/ReplyMapper.xml"/>
+    <mapper resource="mapper/UserDiscussionMapper.xml"/>
+    <mapper resource="mapper/UserMessageMapper.xml"/>
   </mappers>
 </configuration>

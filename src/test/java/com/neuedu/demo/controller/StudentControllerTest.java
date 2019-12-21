@@ -33,7 +33,7 @@ public class StudentControllerTest {
 	}
 	@Test
 	public void queryTest(){
-		String result=controller.queryStudentInfoById((long) 4).toString();
+		String result=controller.queryStudentInfoById((long) 1).toString();
 		System.out.println(result);
 	}
 	@Test

@@ -11,7 +11,6 @@ import org.springframework.stereotype.Service;
 
 import com.neuedu.demo.dao.MessageMapper;
 import com.neuedu.demo.domain.Message;
-import com.neuedu.demo.domain.Question;
 @Service
 public class MessageServiceImpl implements MessageService {
 	private SqlSession session;

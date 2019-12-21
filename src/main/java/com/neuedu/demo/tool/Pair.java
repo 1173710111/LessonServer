@@ -14,4 +14,9 @@ public class Pair{
 	public Object getValue2() {
 		return value2;
 	}
+	@Override
+	public String toString() {
+		return "Pair [value1=" + value1.toString() + ", value2=" + value2.toString() + "]";
+	}
+	
 }

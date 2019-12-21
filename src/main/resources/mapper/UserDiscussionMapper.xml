@@ -3,31 +3,39 @@
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.neuedu.demo.dao.UserDiscussionMapper">
-	<insert id="insertUserDiscussion" parameterType="UserDiscussion">
+	<insert id="insertUserDiscussion" parameterType="UserDiscussion" useGeneratedKeys="true" keyProperty="id" keyColumn="id">
 		INSERT INTO
 		user_discussion(discussion_id,user_identity,user_id,star_state) 
 		VALUES(#{discussionId},#{userIdentity},#{userId},#{starState});
 	</insert>
-	<delete id="deleteUserDiscussion" parameterType="UserDiscussion">
+	<delete id="deleteUserDiscussion" parameterType="Long">
 		DELETE FROM user_discussion
-		WHERE discussion_id=#discussionId} and user_identity=#{userIdentity} and user_id=#{userId};
+		WHERE id=#{0}
 	</delete>
-	<update  id="updateUserDiscussionState" parameterType="UserDiscussion">
+	<update  id="updateUserDiscussionState" parameterType="Pair">
 		UPDATE user_discussion
 		SET
-		star_state=#{starState}
-		WHERE user_identy=#{userIdentity} and user_id=#{userId} and discussion_id=#{discussionId};
+		star_state=#{value2}
+		WHERE id=#{value1}
 	</update>
+	<select id="queryUserDiscussionById" parameterType="Long" resultType="UserDiscussion">
+		SELECT id id,user_identity userIdentity,user_id userId,discussion_id discussionId,star_state starState
+		FROM user_discussion
+		WHERE id=#{id};
+	</select> 
 	<select id="queryUserDiscussions" parameterType="Pair" resultType="UserDiscussion">
-		SELECT user_identity userIdentity ,user_id userId,discussion_id discussionId,star_state starState
+		SELECT id id,user_identity userIdentity ,user_id userId,discussion_id discussionId,star_state starState
 		FROM user_discussion
 		WHERE user_identity=userIdentity and user_id=userId;
 	</select> 
-	<select id="queryDiscussionUsersByUserId" parameterType="Long" resultType="UserDiscussion">
-		SELECT user_identity userIdentity ,user_id userId,discussion_id discussionId,star_state starState
+	<select id="queryUserDiscussionsByDiscussionId" parameterType="Long" resultType="UserDiscussion">
+		SELECT id id,user_identity userIdentity ,user_id userId,discussion_id discussionId,star_state starState
 		FROM user_discussion
-		WHERE discussion_id=discussionId;
+		WHERE discussion_id=#{discussionId};
 	</select> 
+	<select id="isExistent"  parameterType="Long" resultType="Integer">
+		select COUNT(*) as count from user_discussion where id=#{id}
+	</select>
 	<select id="count" resultType="Long">
 		select COUNT(*) as count from user_discussion 
 	</select>

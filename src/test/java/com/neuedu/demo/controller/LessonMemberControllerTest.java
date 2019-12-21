@@ -21,7 +21,6 @@ public class LessonMemberControllerTest {
 	@Test
 	public void insertTest(){
 		String result=controller.insertLessonMember((long)1,(long)2);
-		controller.insertLessonMember((long)1, (long)3);
 		controller.insertLessonMember((long)2, (long)2);
 		controller.insertLessonMember((long)4, (long)2);
 		controller.insertLessonMember((long)2, (long)4);

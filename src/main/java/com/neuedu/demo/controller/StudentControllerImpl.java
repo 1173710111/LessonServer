@@ -60,4 +60,11 @@ public class StudentControllerImpl implements StudentController  {
 		UserInfo newStudent=new UserInfo(student.getUsername(),student.getPassword(),student.getId(),student.getImage(),"student");
 		return newStudent;
 	}
+
+	@Override
+	public UserInfo queryStudentInfoByName(String name) {
+		UserInfo student=service.queryStudentByName(name);
+		UserInfo newStudent=new UserInfo(student.getUsername(),student.getPassword(),student.getId(),student.getImage(),"student");
+		return newStudent;
+	}
 }

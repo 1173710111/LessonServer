@@ -12,4 +12,5 @@ public interface TeacherMapper {
 	public UserInfo queryTeacherById(Long id);
 	public Long count();
 	public Integer isExistent(Long id);
+	public UserInfo queryTeacherByName(String name);
 }

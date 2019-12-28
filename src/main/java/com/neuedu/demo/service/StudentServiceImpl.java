@@ -58,4 +58,13 @@ public class StudentServiceImpl implements StudentService {
 		return mapper.count();
 	}
 
+	@Override
+	public UserInfo queryStudentByName(String name) {
+		UserInfo student=null;
+		student=mapper.queryStudentByName(name);
+		if (student==null)	
+			student=new UserInfo(null,null,0,null,null);
+		return student;
+	}
+
 }

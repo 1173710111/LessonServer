@@ -61,4 +61,11 @@ public class TeacherControllerImpl implements TeacherController {
 		return newTeacher;
 	}
 
+	@Override
+	public UserInfo queryTeacherInfoByName(String name) {
+		UserInfo teacher=service.queryTeacherByName(name);
+		UserInfo newTeacher=new UserInfo(teacher.getUsername(),teacher.getPassword(),teacher.getId(),teacher.getImage(),"teacher");
+		return newTeacher;
+	}
+
 }

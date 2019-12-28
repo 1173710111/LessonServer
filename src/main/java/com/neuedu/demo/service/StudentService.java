@@ -15,4 +15,6 @@ public interface StudentService {
 	public void updateStudent(UserInfo student);
 	public UserInfo queryStudentById(Long id);
 	public Long count();
+	public UserInfo queryStudentByName(String name);
+	
 }

@@ -56,4 +56,13 @@ public class TeacherServiceImpl implements TeacherService {
 		return mapper.count();
 	}
 
+	@Override
+	public UserInfo queryTeacherByName(String name) {
+		UserInfo teacher=null;
+		teacher=mapper.queryTeacherByName(name);
+		if (teacher==null)	
+			teacher=new UserInfo(null,null,0,null,null);
+		return teacher;
+	}
+
 }

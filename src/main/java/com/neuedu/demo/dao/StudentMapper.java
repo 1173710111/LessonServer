@@ -12,4 +12,5 @@ public interface StudentMapper {
 	public UserInfo queryStudentById(Long id);
 	public Long count();
 	public Integer isExistent(Long id);
+	public UserInfo queryStudentByName(String name);
 }

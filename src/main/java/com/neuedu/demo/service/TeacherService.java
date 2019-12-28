@@ -15,4 +15,5 @@ public interface TeacherService {
 	public void updateTeacher(UserInfo teacher);
 	public UserInfo queryTeacherById(Long id);
 	public Long count();
+	public UserInfo queryTeacherByName(String name);
 }

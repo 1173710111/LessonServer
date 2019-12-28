@@ -25,6 +25,11 @@
 		FROM user_stu
 		WHERE id=#{0};
 	</select> 
+	<select id="queryStudentByName" parameterType="String" resultMap="myUserInfo">
+		SELECT id,name,password,image
+		FROM user_stu
+		WHERE name=#{name};
+	</select> 
 	<select id="isExistent"  parameterType="Long" resultType="Integer">
 		select COUNT(*) as count from user_stu where id=#{id}
 	</select>

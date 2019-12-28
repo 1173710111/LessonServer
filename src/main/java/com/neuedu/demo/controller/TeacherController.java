@@ -14,4 +14,5 @@ public interface TeacherController {
 	public String deleteTeacher(Long id);
 	public String updateTeacher(Long id,String username,String password,String image);
 	public UserInfo queryTeacherInfoById(Long id);
+	public UserInfo queryTeacherInfoByName(String name);
 }

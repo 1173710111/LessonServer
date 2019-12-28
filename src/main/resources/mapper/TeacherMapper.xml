@@ -25,6 +25,11 @@
 		FROM user_tea
 		WHERE id=#{0};
 	</select> 
+	<select id="queryTeacherByName" parameterType="String" resultMap="myUserInfo">
+		SELECT name,password,id,image
+		FROM user_tea
+		WHERE name=#{name};
+	</select> 
 	<select id="isExistent"  parameterType="Long" resultType="Integer">
 		select COUNT(*) as count from user_tea where id=#{id}
 	</select>
